@@ -18,7 +18,7 @@ const shared = {
   editUrl: 'https://github.com/hipheckts/ifeoluwaafuwape.com/edit/main/data/',
   website: 'https://ifeoluwaafuwape.com',
   title:
-    'Ifeoluwa Afuwape - Engineer (Software Systems), Mobile Developer and Product Designer',
+    'Ifeoluwa Afuwape - Senior Mobile & Software Engineer',
   description:
     'Software Engineer with a niche for Mobile, Web and Cross Platform Applications. Ex-Python Dev.',
   image: 'https://ifeoluwaafuwape.com/static/images/banner.png',
