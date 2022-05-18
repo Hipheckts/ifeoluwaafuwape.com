@@ -46,14 +46,14 @@ export default function BlogPage({ blog, ogImageUrl }: { blog: Blog; ogImageUrl:
               <HStack spacing="3">
                 <Circle overflow="hidden">
                   <Image
-                    alt="Segun Adebayo"
-                    src="https://vercel.com/api/www/avatar/6ad338204b00eabaea90981779d3835976b53833?s=64"
+                    alt="Ifeoluwa Afuwape"
+                    src="/static/images/ife-head-shot.jpg"
                     layout="fixed"
                     width="32px"
                     height="32px"
                   />
                 </Circle>
-                <Text fontWeight="medium">Segun Adebayo</Text>
+                <Text fontWeight="medium">Ifeoluwa Afuwape</Text>
               </HStack>
 
               <HStack color="sage.base">

@@ -16,19 +16,18 @@ export default function ProjectPage() {
             Projects
           </Heading>
           <Stack fontSize="lg" maxW="60ch" spacing="4">
-            <Text>
+            {/* <Text>
               My primary focus these days is{' '}
               <MDXComponents.a href="https://chakra-ui.com/" target="_blank" rel="noopener">
-                Chakra UI{' '}
+                P{' '}
               </MDXComponents.a>{' '}
               — a component libary that provides the building blocks needed to create an accessible
               app fast <Emoji label="fast">⚡️</Emoji>.
-            </Text>
+            </Text> */}
             <Text>
-              I'm passionate about building <b>component systems</b> that help teams ship products
-              faster and bridges the gap between design and code.
+              I'm passionate about building <b>mobile applications</b> that are highly scalable, efficient and absolutely world-class and always ready to go extra miles to achieve a feat🏅 if need be, I can learn a whole lot just for a solution to be brought to reality.
             </Text>
-            <Text>Here are some projects I've worked on that I think are worth mentioning.</Text>
+            <Text>Here are some projects I've worked on some of which includes: Financial Applications, Utility Apps, Messaging, E-commerce, Health & Fitnes, Insurance, Logistics, Media & Streaming and a host of others!</Text>
           </Stack>
         </Box>
 

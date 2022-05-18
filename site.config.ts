@@ -1,34 +1,27 @@
 export const tags = [
-  'finance',
-  'hiring',
-  'career',
-  'software',
-  'design',
-  'interview',
-  'speaking',
-  'design-system',
-  'accessibility',
-  'state-machine',
-  'react',
-  'jest',
+  'ui/ux',
+  'design conversion',
+  'flutter',
+  'react-native',
+  'animations',
+  'codemagic',
   'testing',
-  'component',
-  'open-source',
+  'health & fitness',
   'tips',
   'github-actions',
-  'ci',
+  'ci/cd',
 ];
 
 const shared = {
   name: 'Ifeoluwa Afuwape',
-  repo: 'https://github.com/segunadebayo/adebayosegun.com',
-  editUrl: 'https://github.com/segunadebayo/adebayosegun.com/edit/main/data/',
+  repo: 'https://github.com/hipheckts/ifeoluwaafuwape.com',
+  editUrl: 'https://github.com/hipheckts/ifeoluwaafuwape.com/edit/main/data/',
   website: 'https://ifeoluwaafuwape.com',
   title:
     'Ifeoluwa Afuwape - Engineer (Software Systems), Mobile Developer and Product Designer',
   description:
     'Software Engineer with a niche for Mobile, Web and Cross Platform Applications. Ex-Python Dev.',
-  image: 'https://adebayosegun.com/static/images/banner.png',
+  image: 'https://ifeoluwaafuwape.com/static/images/banner.png',
 };
 
 const siteConfig = {
@@ -64,7 +57,7 @@ const siteConfig = {
     description: shared.description,
     images: [
       {
-        url: 'https://adebayosegun.com/static/images/banner.png',
+        url: 'https://ifeoluwaafuwape.com/static/images/banner.png',
         width: 1200,
         height: 630,
         alt: 'Ifeoluwa Afuwape - Engineer (Software Systems), Mobile Developer and Product Designer',

@@ -18,6 +18,6 @@ export function removeQuery(router: NextRouter, key: string) {
 
 export function getAbsoluteURL(path: string) {
   const baseURL =
-    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://adebayosegun.com';
+    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://ifeoluwaafuwape.com';
   return baseURL + path;
 }

@@ -82,7 +82,7 @@ export default function Page() {
           px="6"
           py="2"
         >
-          https://adebayosegun.com
+          https://ifeoluwaafuwape.com
         </Box>
       </Box>
     </>

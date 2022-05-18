@@ -24,8 +24,7 @@ export default function Page() {
             Blog
           </Heading>
           <Text fontSize="lg" maxW="560px">
-            Here's a list of articles, thoughts and ideas around topics like design systems,
-            accessibility, state machines and lots more.
+            Welcome🚀🚀🚀!.. Here, I'll be sharing a tips and thoughts on several mobile solutions and applications. Many will be in series (may not be timely, forgive me🙈) but you'll sure enjoy the ride!
           </Text>
         </Box>
 
@@ -53,11 +52,11 @@ export default function Page() {
           {search.hasFilter || search.hasQuery ? null : (
             <FeaturedBlogCard data={allFeaturedBlogs[0]} />
           )}
-          <SimpleGrid columns={{ base: 1, md: 3 }} mt="4rem" spacing="10">
+          {/* <SimpleGrid columns={{ base: 1, md: 3 }} mt="4rem" spacing="10">
             {search.results.map((blog) => (
               <BlogCard key={blog.title} data={blog} />
             ))}
-          </SimpleGrid>
+          </SimpleGrid> */}
         </Box>
       </Box>
     </Container>
