@@ -17,6 +17,7 @@ module.exports = withContentlayer()({
       'cdn.changelog.com',
       'speakeasyjs.com',
       'www.europeanbusinessreview.com',
+      'www.codemotion.com',
     ],
   },
 });
