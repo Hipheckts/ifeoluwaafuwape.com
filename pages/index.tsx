@@ -103,7 +103,7 @@ export default function HomePage() {
           maxWidth="40rem"
           fontSize={{ base: 'lg', md: '2xl' }}
         >
-          I enjoy building <Emoji label="mobile">📱</Emoji> mobile applications and,{' '}
+          I enjoy building <Emoji label="mobile">📱</Emoji> mobile applications and web{' '}
           <Emoji label="solutions">⚙️</Emoji> solutions, with{' '}
           <Emoji label="love">😍 </Emoji> great passion for learning new technologies <Emoji label="technologies">🚀</Emoji>
         </Text>
@@ -151,12 +151,12 @@ export default function HomePage() {
 
           <Heading
             lineHeight="1"
-            fontSize={{ base: '3.125rem', md: '5rem', lg: '6.25rem' }}
+            fontSize={{ base: '3.125rem', md: '5rem', lg: '5.85rem' }}
             letterSpacing="tight"
           >
-            I design{' '}
+            I build{' '}
             <Box as="span" color="sage.base">
-              mobile applications
+              web & mobile applications
             </Box>
           </Heading>
         </Box>
