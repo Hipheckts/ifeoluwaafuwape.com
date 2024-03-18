@@ -65,6 +65,7 @@ function MainHeading(props: HeadingProps) {
       lineHeight="1"
       marginBottom="14"
       userSelect="none"
+      alignContent={'center'}
       {...props}
     />
   );
@@ -80,21 +81,32 @@ export default function HomePage() {
         paddingBottom="24"
         paddingTop="12"
       >
-        <MainHeading>
-          <span>Ifeoluwa Afuwape</span>
+      <MainHeading>
+        <Box
+            display="block"
+            textAlign={'center'}>
+        Ifeoluwa Afuwape
+        </Box>
+      </MainHeading>
           <Box
             as="span"
             color="sage.base"
             display="block"
-            textAlign={{ md: 'end' }}
+            textAlign={'center'}
             _before={{ content: `"— "` }}
+            as="h1"
+            width="full"
+            maxWidth={{ md: '70vw' }}
+            fontFamily="heading"
+            fontSize={{ base: '2.5rem', md: 'max(6vw, 3rem)' }}
+            letterSpacing="tight"
+            lineHeight="1"
+            marginBottom="14"
+            userSelect="none"
+            // fontSize={60}
           >
-            senior mobile
+            senior software engineer
           </Box>
-          <Box as="span" color="sage.base" display="block" whiteSpace={{ md: 'nowrap' }}>
-            &amp; software engineer
-          </Box>
-        </MainHeading>
 
 
         <Text
@@ -184,20 +196,6 @@ export default function HomePage() {
         </Box>
       </Flex>
 
-      {/* Testimonials */}
-      <Box as="section" aria-labelledby="heading" py="vGutter">
-        <VisuallyHidden>Recommendations</VisuallyHidden>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing="6">
-          {chunk(allFeaturedTestimonials, 2).map((testimonials, index) => (
-            <Stack key={index} spacing="6">
-              {testimonials.map((data) => (
-                <TestimonialCard key={data.name} data={data} />
-              ))}
-            </Stack>
-          ))}
-        </SimpleGrid>
-      </Box>
-
       {/* Featured projects */}
       <Box as="section" py="vGutter">
         <Heading size="3xl" letterSpacing="tight">
@@ -210,6 +208,22 @@ export default function HomePage() {
             ))}
           </Stack>
         </Box>
+      </Box>
+
+
+
+      {/* Testimonials */}
+      <Box as="section" aria-labelledby="heading" py="vGutter">
+        <VisuallyHidden>Recommendations</VisuallyHidden>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing="6">
+          {chunk(allFeaturedTestimonials, 2).map((testimonials, index) => (
+            <Stack key={index} spacing="6">
+              {testimonials.map((data) => (
+                <TestimonialCard key={data.name} data={data} />
+              ))}
+            </Stack>
+          ))}
+        </SimpleGrid>
       </Box>
 
       {/* Featured Talks */}

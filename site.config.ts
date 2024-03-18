@@ -18,7 +18,7 @@ const shared = {
   editUrl: 'https://github.com/hipheckts/ifeoluwaafuwape.com/edit/main/data/',
   website: 'https://ifeoluwaafuwape.com',
   title:
-    'Ifeoluwa Afuwape - Senior Mobile & Software Engineer',
+    'Ifeoluwa Afuwape - Senior Software Engineer',
   description:
     'Software Engineer with a niche for Mobile, Web and Cross Platform Applications. Ex-Python Dev.',
   image: 'https://ifeoluwaafuwape.com/static/images/img-banner.png',
@@ -60,7 +60,7 @@ const siteConfig = {
         url: 'https://ifeoluwaafuwape.com/static/images/img-banner.png',
         width: 1200,
         height: 630,
-        alt: 'Ifeoluwa Afuwape - Engineer (Software Systems), Mobile Developer and Product Designer',
+        alt: 'Ifeoluwa Afuwape - Software Engineer',
       },
     ],
   },
