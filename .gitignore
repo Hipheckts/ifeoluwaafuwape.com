@@ -1,11 +1,18 @@
-*.log
-.DS_Store
-.next
+build
 node_modules
-public/sitemap.xml
-public/feed.xml
-.vercel
-.env
 
-# Contentlayer
-.contentlayer
+.DS_*
+*.log
+.git
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
