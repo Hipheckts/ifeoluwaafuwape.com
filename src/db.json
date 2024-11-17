@@ -6,7 +6,7 @@
   "aboutMe": {
     "name": "Ifeoluwa Afuwape",
     "nickName": "Hipheckts'",
-    "profileImg": "https://media.licdn.com/dms/image/D4E03AQFcjcXKLhowQQ/profile-displayphoto-shrink_400_400/0/1721731568585?e=1729123200&v=beta&t=s3aH-tuiH2PAo8Ftg6Lu21N1Pv-E6Eef716qOa0Tq80",
+    "profileImg": "https://media.licdn.com/dms/image/v2/D4E03AQFcjcXKLhowQQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721731568585?e=1737590400&v=beta&t=i5FPq9Nmirko-kZxqZXSD-6kPa4mO5-gGsqlyF74uu8",
     "email": "hipheckt@gmail.com",
     "githubUrl": "https://github.com/hipheckts",
     "blogUrl": "",
@@ -115,13 +115,13 @@
 
   "experiences": [
     {
-      "imgUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFkMWD3FbzssQ/company-logo_100_100/company-logo_100_100/0/1646126308492/newcastle_university_logo?e=1731542400&v=beta&t=xR8s6DgJSm5DbpIc0txDCKgKt2GSuuFC8Tkonkib0lQ",
+      "imgUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFkMWD3FbzssQ/company-logo_100_100/company-logo_100_100/0/1646126308492/newcastle_university_logo?e=1740009600&v=beta&t=TpWM5bu9ntRpF2EZEXV8-oG1vtDoLBdsW6FgHJvtSuI",
       "title": "Web Development Manager - Newcastle University",
       "term": "July 2024 - present",
       "description": "Responsible for managing team members, training plans, project management and workflow planning to ensure the smooth running of the Web Development team. To lead the maintenance of the University’s web presence and other digital products in respect to marketing, with particular attention to accessibility, SEO requirements and browser/device compatibility"
     },
     {
-      "imgUrl": "https://media.licdn.com/dms/image/C560BAQEGlAPQBQxDhQ/company-logo_100_100/0/1631419464221/northumbria_university_logo?e=1731542400&v=beta&t=AO3RwrnanDIoTj6v_cVY9Co3jdGON8ceiVRe-zyBhag",
+      "imgUrl": "https://media.licdn.com/dms/image/v2/C560BAQEGlAPQBQxDhQ/company-logo_100_100/company-logo_100_100/0/1631419464221/northumbria_university_logo?e=1740009600&v=beta&t=l0-Xs0CkvwSakNIWKO9t5i-Tc1lMWnWxJaW-qvQkQnA",
       "title": "Contract Software Engineer - Northumbria University",
       "term": "May 2023 - Aug 2023",
       "description": "I was contracted by the university to develop a web app for energy analysis to improve the undergraduate student study of energy."
@@ -133,13 +133,13 @@
       "description": "Lead a team of 8 junior and intermediate software developers in development of a flagship web and mobile service application for MTN Nigeria, a mobile network service provider with up to 70million customer base in Nigeria. "
     },
     {
-      "imgUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHBGEtbJUcoYQ/company-logo_100_100/company-logo_100_100/0/1701165723385/africas_young_entrepreneurs_logo?e=1731542400&v=beta&t=j9uer9xVlpKIH-8P1WfD83mOSeBuLUx4PkxmWTqDR_I",
+      "imgUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHBGEtbJUcoYQ/company-logo_100_100/company-logo_100_100/0/1701165723385/africas_young_entrepreneurs_logo?e=1740009600&v=beta&t=2VAfWN0Z2bjJurVoCRtyhW1lzgLC2hL50yioZny595U",
       "title": "Software Engineer & IT Manager - Africa's Young Entrepreneurs",
       "term": "Feb 2018 - Jul 2021",
       "description": "I oversaw setup, deployment and managing the organization's projects and led other members of the technology team in an agile development environment working with other engineering team members of the organization from South Africa and India. "
     },
     {
-      "imgUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFEKHSeK4FKLw/company-logo_100_100/company-logo_100_100/0/1695206242672/lms_solutions_india_pvt_ltd_logo?e=1731542400&v=beta&t=WUMMwe7fbBjy_gZ-HPdxbtSs7y2MxvbtyODtqkunrNo",
+      "imgUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFEKHSeK4FKLw/company-logo_100_100/company-logo_100_100/0/1695206242672/lms_solutions_india_pvt_ltd_logo?e=1740009600&v=beta&t=bBsxaJRZSSxJZk8AsQl52Efxy_-Hfsr1TZbvqib40aE",
       "title": "Software Engineer - LMS Solutions (India) Pvt. Ltd.",
       "term": "Jun 2019 - Sep 2019",
       "description": "Led the development of the Entrepreneurs Trust Fund web and mobile apps using ReactJS, Flutter for frontend and Laravel PHP for backend, with over 300,000 active users across Africa and 20k+ downloads on google playstore and apple store."
@@ -154,7 +154,7 @@
     },
     {
       "title": "BEng. Agricultural Engineering",
-      "term": "11.2013.09 - 04.2018",
+      "term": "11.2013 - 04.2018",
       "description": "Federal University of Agriculture, Abeokuta"
     }
   ]

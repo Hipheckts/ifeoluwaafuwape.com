@@ -92,10 +92,8 @@ const AboutMe = () => {
           <div className='detail-wrapper'>
             <div className='details'>
               <span className='details'>
-                I am a full stack software engineer with over six (6) years
-                commercial software development experience spanning across EdTech, FinTech, Agri-Tech, Health and E-commerce.
-                My focus and strengths are in crafting visually engaging and intuitive web and mobile solutions whilst
-                adhering to stringent benchmarks of quality, scalability, and dependability.
+                I am a full stack software engineer with over eight (8) years commercial software development both web and mobile with my experience spanning across EdTech, FinTech, Agri-Tech, Health and E-commerce.
+                My focus and strengths are in crafting visually engaging and intuitive web and mobile solutions whilst adhering to stringent benchmarks of quality, scalability, and dependability.
                 <br />
                 <br />
               </span>
