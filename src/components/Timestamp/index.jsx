@@ -12,7 +12,7 @@ const Timestamp = () => {
     <>
       {timestamp &&
         <>
-          <SubTitle>Timestamp</SubTitle>
+          <SubTitle>Certifications</SubTitle>
           <div className='timestamp-container'>
             {timestamp.map((time, index) => (
               <TimeStampItem key={index} {...time} />

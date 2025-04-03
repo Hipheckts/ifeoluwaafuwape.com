@@ -27,9 +27,9 @@ const Home = () => {
         <AboutMe />
         <Experience />
         <SkillSets />
+        <Timestamp />
         <Education />
-        {/* <Projects />
-        <Timestamp /> */}
+        <Projects />
         <Footer />
       </PageWrapper>
     </CSSTransition>

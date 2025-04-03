@@ -102,10 +102,10 @@ const AboutMe = () => {
                 <br />
                 <br />
               </span>
-              <div className='detail flex'>
+              {/* <div className='detail flex'>
                 <span className='category'>Email</span>
                 <div id='email' onClick={copy}>
-                  {email}
+                  Connect with Me
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isEmailCopied}
@@ -119,21 +119,21 @@ const AboutMe = () => {
                     </span>
                   </CSSTransition>
                 </div>
-              </div>
+              </div> */}
               <div className='detail flex'>
                 <span className='category'>Github</span>
-                <a href={githubUrl}>{githubUrl}</a>
+                <a href={githubUrl}>Visit My Github Profile</a>
               </div>
-              {blogUrl && (
-                <div className='detail flex'>
-                  <span className='category'>Blog</span>
-                  <a href={blogUrl}>{blogUrl}</a>
-                </div>
-              )}
               {linkedInUrl && (
                 <div className='detail flex'>
                   <span className='category'>LinkedIn</span>
-                  <a href={linkedInUrl}>{linkedInUrl}</a>
+                  <a href={linkedInUrl}>Connect on LinkedIn</a>
+                </div>
+              )}
+              {blogUrl && (
+                <div className='detail flex'>
+                  <span className='category'>Youtube</span>
+                  <a href={blogUrl}>Ifeoluwa Afuwape (TechChat with Ife)</a>
                 </div>
               )}
               {resumeUrl && (

@@ -8,10 +8,10 @@ const Footer = () => {
       <a
         target='_blank'
         rel='noopener noreferrer'
-        href='https://github.com/hipheckts/ifeoluwaafuwape.com'
+        href='https://ifeoluwaafuwape.xyz'
       >
         <p className='footer-contents'>
-          <span className='icon'>&copy; 2024</span> Ifeoluwa Afuwape
+          <span className='icon'>&copy; 2025</span> Ifeoluwa Afuwape
         </p>
       </a>
     </div>
