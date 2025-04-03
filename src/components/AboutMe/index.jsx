@@ -92,8 +92,13 @@ const AboutMe = () => {
           <div className='detail-wrapper'>
             <div className='details'>
               <span className='details'>
-                I am a full stack software engineer with over eight (8) years commercial software development both web and mobile with my experience spanning across EdTech, FinTech, Agri-Tech, Health and E-commerce.
-                My focus and strengths are in crafting visually engaging and intuitive web and mobile solutions whilst adhering to stringent benchmarks of quality, scalability, and dependability.
+              I am a Google Cloud Digital Leader-certified professional, a UK-qualified Engineering Manager, and a full-stack software engineer with over nine years of commercial experience across diverse sectors, including UK Higher Education, EdTech, FinTech, Agri-Tech, Health, E-commerce, and Fitness.<br />
+
+              My expertise lies in leading and developing visually engaging, intuitive web and mobile applications, ensuring they meet the highest standards of quality, scalability, and reliability.<br />
+
+              With strong problem-solving abilities, analytical thinking, attention to detail, and effective planning, I bring excellent communication, interpersonal, and collaboration skills to every team I join. My proven ability to thrive in multi-cultural and dynamic environments has enabled me to contribute significantly to achieving organisational goals.<br />
+
+              I am a professional member of the British Computer Society (BCS) and a registered member of the Nigerian Society of Engineers (NSE), where I first qualified as an Engineer.
                 <br />
                 <br />
               </span>
