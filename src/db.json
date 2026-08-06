@@ -6,7 +6,7 @@
   "aboutMe": {
     "name": "Ifeoluwa Afuwape",
     "nickName": "Hipheckts'",
-    "profileImg": "./assets/images/ife.jpeg",
+    "profileImg": "./assets/images/ife2.jpeg",
     "email": "hipheckt@gmail.com",
     "githubUrl": "https://github.com/hipheckts",
     "blogUrl": "https://www.youtube.com/@hipheckt",
@@ -73,7 +73,7 @@
     {
       "imgUrl": "https://github.com/Hipheckts/Flutter-2FA/blob/master/sc_2.png?raw=true",
       "githubUrl": "https://pub.dev/packages/flutter_2fa",
-      "projectUrl": "",
+      "projectUrl": "https://pub.dev/packages/flutter_2fa",
       "title": "Flutter 2FA",
       "term": "v1.0.4",
       "description": "🔐 This package to helps adds 2 Factor Authentiation in any flutter project with ease.",
@@ -84,10 +84,16 @@
 
   "timestamp": [
     {
+      "title": "Google Cloud Platform - Professional Cloud Architect",
+      "when": "January 2026",
+      "organizer": "Google Cloud",
+      "tags": ["Cloud Architect", "Cloud Computing"]
+    },
+    {
       "title": "Google Cloud Platform - Cloud Digital Leader",
       "when": "April 2025",
       "organizer": "Google Cloud",
-      "tags": ["Google Cloud Platform"]
+      "tags": ["Cloud Digital Leader", "GCP", "Cloud Computing"]
     },
     {
       "title": "DevOps Essentials",

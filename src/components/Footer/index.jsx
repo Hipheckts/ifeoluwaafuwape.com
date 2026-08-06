@@ -11,7 +11,7 @@ const Footer = () => {
         href='https://ifeoluwaafuwape.xyz'
       >
         <p className='footer-contents'>
-          <span className='icon'>&copy; 2025</span> Ifeoluwa Afuwape
+          <span className='icon'>&copy; 2026</span> Ifeoluwa Afuwape
         </p>
       </a>
     </div>
