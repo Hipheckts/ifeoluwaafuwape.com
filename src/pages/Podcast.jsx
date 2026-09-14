@@ -4,6 +4,7 @@ import { Youtube, ExternalLink, Play, Radio, Clock, User } from 'lucide-react';
 export default function Podcast() {
   const playlistId = "PLE1d6q-CHei7ryhzDE6vhtlhC0vAzqoCE";
   const [activeEpisodeIndex, setActiveEpisodeIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const episodes = [
     {
@@ -11,6 +12,7 @@ export default function Podcast() {
       guest: "Adewale Abati (Ace)",
       duration: "43:25",
       index: 0,
+      videoId: "8FsNWu_dz2E",
       description: "Exploring the evolution of Agentic AI, its impact on software engineering jobs, data security, and maintaining foundational engineering skills alongside AI automation."
     },
     {
@@ -18,6 +20,7 @@ export default function Podcast() {
       guest: "Uzoma James",
       duration: "38:26",
       index: 1,
+      videoId: "7t_8QfWiUAc",
       description: "Actionable guidance and career strategies for navigating transitions and building a successful career in the global technology industry."
     },
     {
@@ -25,6 +28,7 @@ export default function Podcast() {
       guest: "Ademulegun (Ade') Olowojoba",
       duration: "44:42",
       index: 2,
+      videoId: "XVF4mW_Ebkg",
       description: "Unpacking emerging tech talent opportunities, skill demand in international markets, and strategies for career advancement."
     },
     {
@@ -32,6 +36,7 @@ export default function Podcast() {
       guest: "Dr Iretioluwa Akerele",
       duration: "41:16",
       index: 3,
+      videoId: "PYRTN5I_KG0",
       description: "Essential cybersecurity practices, personal security responsibilities, data privacy, and shielding digital platforms from threats."
     },
     {
@@ -39,6 +44,7 @@ export default function Podcast() {
       guest: "Rob McCargow",
       duration: "30:59",
       index: 4,
+      videoId: "pL1FP4GAbL4",
       description: "Discussing human-AI collaboration, ethics, leadership, and how tech professionals can position themselves in an increasingly automated workforce."
     },
     {
@@ -46,6 +52,7 @@ export default function Podcast() {
       guest: "Romano Pravdic",
       duration: "42:34",
       index: 5,
+      videoId: "5H3tH1-w_r8",
       description: "Insights into innovation mindset, building scalable tech products from scratch, and driving digital transformation."
     },
     {
@@ -53,6 +60,7 @@ export default function Podcast() {
       guest: "Romano Pravdic",
       duration: "0:58",
       index: 6,
+      videoId: "p79ImudCMX4",
       description: "Key highlight and teaser on the innovation mindset and product strategy."
     },
     {
@@ -60,6 +68,7 @@ export default function Podcast() {
       guest: "Patrick Nwafor",
       duration: "1:21:35",
       index: 7,
+      videoId: "icvzUmmUSF4",
       description: "Masterclass on personal branding, digital leverage, content strategy, and maximizing social platforms for tech professionals."
     },
     {
@@ -67,6 +76,7 @@ export default function Podcast() {
       guest: "Yetunde Shopeju",
       duration: "33:13",
       index: 8,
+      videoId: "JbFhZBrSDdo",
       description: "Inspiring conversation on grit, execution, discipline, and building high-impact tech careers."
     }
   ];
@@ -77,6 +87,7 @@ export default function Podcast() {
 
   const playEpisode = (index) => {
     setActiveEpisodeIndex(index);
+    setIsPlaying(true);
     window.scrollTo({ top: 120, behavior: 'smooth' });
   };
 
@@ -107,7 +118,7 @@ export default function Podcast() {
           <div
             style={{
               display: 'flex',
-              justify: 'space-between',
+              justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: '0.75rem',
               flexWrap: 'wrap',
@@ -132,21 +143,68 @@ export default function Podcast() {
               boxShadow: 'var(--shadow-sm)',
             }}
           >
-            <iframe
-              key={activeEpisodeIndex}
-              title={currentEpisode.title}
-              src={`https://www.youtube.com/embed/videoseries?list=${playlistId}&index=${activeEpisodeIndex}&autoplay=1`}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 0,
-              }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+            {isPlaying ? (
+              <iframe
+                key={currentEpisode.videoId}
+                title={currentEpisode.title}
+                src={`https://www.youtube.com/embed/${currentEpisode.videoId}?autoplay=1&rel=0`}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 0,
+                }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <div
+                onClick={() => setIsPlaying(true)}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(https://img.youtube.com/vi/${currentEpisode.videoId}/hqdefault.jpg)`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  padding: '1.5rem',
+                  textAlign: 'center',
+                }}
+              >
+                <div
+                  style={{
+                    width: '64px',
+                    height: '64px',
+                    borderRadius: '50%',
+                    backgroundColor: 'var(--accent)',
+                    color: 'var(--accent-inverse)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.5)',
+                    marginBottom: '1rem',
+                    transition: 'transform 0.2s ease',
+                  }}
+                >
+                  <Play size={28} style={{ marginLeft: '4px' }} />
+                </div>
+                <h3 style={{ color: '#fff', fontSize: '1.2rem', fontWeight: 600, maxWidth: '600px', margin: '0 0 0.5rem 0' }}>
+                  Episode #{currentEpisodeNumber}: {currentEpisode.title}
+                </h3>
+                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', fontFamily: 'var(--font-mono)', margin: 0 }}>
+                  Click to play video ({currentEpisode.duration})
+                </p>
+              </div>
+            )}
           </div>
 
           <div
@@ -190,7 +248,7 @@ export default function Podcast() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
                   <span className="tag" style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: isActive ? 'var(--accent)' : 'var(--tag-bg)', color: isActive ? 'var(--accent-inverse)' : 'var(--text-secondary)' }}>
-                    Episode #{episodeNumber} {isActive ? '• Active' : ''}
+                    Episode #{episodeNumber} {isActive && isPlaying ? '• Playing' : isActive ? '• Active' : ''}
                   </span>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
@@ -219,17 +277,17 @@ export default function Podcast() {
                     style={{
                       fontSize: '0.8rem',
                       padding: '0.4rem 0.85rem',
-                      backgroundColor: isActive ? 'var(--accent)' : 'var(--bg-primary)',
-                      color: isActive ? 'var(--accent-inverse)' : 'var(--text-primary)',
+                      backgroundColor: isActive && isPlaying ? 'var(--accent)' : 'var(--bg-primary)',
+                      color: isActive && isPlaying ? 'var(--accent-inverse)' : 'var(--text-primary)',
                       cursor: 'pointer',
                       border: '1px solid var(--border-focus)',
                     }}
                   >
-                    <Play size={14} /> {isActive ? 'Now Playing' : `Play Episode #${episodeNumber}`}
+                    <Play size={14} /> {isActive && isPlaying ? 'Now Playing' : `Play Episode #${episodeNumber}`}
                   </button>
 
                   <a
-                    href={`https://www.youtube.com/watch?v=playlist&list=${playlistId}&index=${ep.index}`}
+                    href={`https://www.youtube.com/watch?v=${ep.videoId}`}
                     target="_blank"
                     rel="noreferrer"
                     className="social-btn"
@@ -246,3 +304,4 @@ export default function Podcast() {
     </div>
   );
 }
+
