@@ -57,21 +57,23 @@ export default function Podcast() {
     },
     {
       title: "Maximising Social Media",
-      guest: "Expert Panel",
+      guest: "Patrick Nwafor",
       duration: "1:21:35",
       index: 7,
       description: "Masterclass on personal branding, digital leverage, content strategy, and maximizing social platforms for tech professionals."
     },
     {
       title: "TechChat with Ife: Dream Big, Put in the Work",
-      guest: "Yetunde Shopeju & Panel",
+      guest: "Yetunde Shopeju",
       duration: "33:13",
       index: 8,
       description: "Inspiring conversation on grit, execution, discipline, and building high-impact tech careers."
     }
   ];
 
+  const totalEpisodes = episodes.length;
   const currentEpisode = episodes[activeEpisodeIndex] || episodes[0];
+  const currentEpisodeNumber = totalEpisodes - currentEpisode.index;
 
   const playEpisode = (index) => {
     setActiveEpisodeIndex(index);
@@ -112,7 +114,7 @@ export default function Podcast() {
               gap: '0.5rem',
             }}
           >
-            <span className="developer-tag">// Currently Loaded: Episode #{currentEpisode.index + 1}</span>
+            <span className="developer-tag">// Currently Loaded: Episode #{currentEpisodeNumber}</span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
               {currentEpisode.guest} ({currentEpisode.duration})
             </span>
@@ -157,7 +159,7 @@ export default function Podcast() {
             }}
           >
             <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-              {currentEpisode.title}
+              Episode #{currentEpisodeNumber}: {currentEpisode.title}
             </h3>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
               {currentEpisode.description}
@@ -167,12 +169,13 @@ export default function Podcast() {
 
         {/* Episodes Directory */}
         <div className="section-header">
-          <h3 className="section-title">all_episodes ({episodes.length})</h3>
+          <h3 className="section-title">all_episodes ({totalEpisodes})</h3>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           {episodes.map((ep) => {
             const isActive = ep.index === activeEpisodeIndex;
+            const episodeNumber = totalEpisodes - ep.index;
 
             return (
               <div
@@ -187,7 +190,7 @@ export default function Podcast() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
                   <span className="tag" style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: isActive ? 'var(--accent)' : 'var(--tag-bg)', color: isActive ? 'var(--accent-inverse)' : 'var(--text-secondary)' }}>
-                    Episode #{ep.index + 1} {isActive ? '• Active' : ''}
+                    Episode #{episodeNumber} {isActive ? '• Active' : ''}
                   </span>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
@@ -222,7 +225,7 @@ export default function Podcast() {
                       border: '1px solid var(--border-focus)',
                     }}
                   >
-                    <Play size={14} /> {isActive ? 'Now Playing' : `Play Episode #${ep.index + 1}`}
+                    <Play size={14} /> {isActive ? 'Now Playing' : `Play Episode #${episodeNumber}`}
                   </button>
 
                   <a
