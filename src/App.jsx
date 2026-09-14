@@ -1,27 +1,29 @@
-import { Helmet } from 'react-helmet';
-import Home from './components/pages/Home';
-import { LanguageContextProvider } from './context/languageContext';
 import React from 'react';
-import { ThemeChangeContextProvider } from './context/themeChangeContext';
-import myData from './db.json';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Experience from './pages/Experience';
+import Projects from './pages/Projects';
+import Articles from './pages/Articles';
+import ArticleDetail from './pages/ArticleDetail';
 
-function App() {
-  const {
-    meta: { title },
-  } = myData;
-
+export default function App() {
   return (
-    <>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
-      <ThemeChangeContextProvider>
-        <LanguageContextProvider>
-          <Home />
-        </LanguageContextProvider>
-      </ThemeChangeContextProvider>
-    </>
+    <Router>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/articles/:slug" element={<ArticleDetail />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
-
-export default App;

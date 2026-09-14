@@ -1,44 +1,29 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "ifeoluwaafuwape-portfolio",
   "private": true,
-  "dependencies": {
-    "file-loader": "^6.2.0",
-    "i18next": "^20.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-i18next": "^11.11.0",
-    "react-helmet": "^6.1.0",
-    "react-refresh-webpack-plugin": "^0.1.0",
-    "react-scripts": "4.0.3",
-    "react-transition-group": "^4.4.2",
-    "sass": "^1.35.1",
-    "web-vitals": "^1.0.1"
-  },
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "highlight.js": "^11.10.0",
+    "lucide-react": "^0.439.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.26.1",
+    "rehype-highlight": "^7.0.0",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
-    "url-loader": "^4.1.1"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
   }
 }

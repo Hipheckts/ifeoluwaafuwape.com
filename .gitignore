@@ -1,18 +1,20 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# production build output
+dist
 build
-node_modules
 
-.DS_*
+# logs
 *.log
-.git
 logs
-**/*.backup.*
-**/*.back.*
 
-node_modules
-bower_components
-
-*.sublime*
-
-psd
-thumb
-sketch
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
