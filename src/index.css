@@ -129,33 +129,39 @@ a:hover {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   list-style: none;
 }
 
 .nav-link {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 0.25rem 0;
-  transition: color 0.15s ease;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--text-primary);
+  background-color: var(--bg-hover);
 }
 
 .nav-link.active {
-  border-bottom: 1.5px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
 }
 
-.theme-toggle {
+.theme-toggle,
+.mobile-menu-btn {
   background: none;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  padding: 0.4rem;
+  padding: 0.45rem;
   border-radius: 6px;
   cursor: pointer;
   display: flex;
@@ -164,15 +170,96 @@ a:hover {
   transition: all 0.15s ease;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.mobile-menu-btn:hover {
   background-color: var(--bg-hover);
   border-color: var(--border-focus);
 }
 
-/* Page Layout */
-.main-content {
-  flex: 1;
-  padding: 3rem 0 5rem 0;
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-menu-drawer {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0 1.5rem 0;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.mobile-nav-link.active {
+  border-left: 3px solid var(--accent);
+}
+
+/* Tablet Responsive Spacing (768px - 950px) */
+@media (max-width: 900px) {
+  .nav-text {
+    display: none;
+  }
+  .nav-links {
+    gap: 0.35rem;
+  }
+  .nav-link {
+    padding: 0.45rem;
+  }
+  .brand-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Responsive Layout (< 640px) */
+@media (max-width: 640px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-actions {
+    display: flex;
+  }
+  .hero-name {
+    font-size: 1.75rem;
+  }
+  .hero-title {
+    font-size: 1rem;
+  }
+  .profile-header {
+    margin-bottom: 1.5rem;
+  }
+  .section {
+    margin-top: 2.5rem;
+  }
 }
 
 /* Hero & About */
