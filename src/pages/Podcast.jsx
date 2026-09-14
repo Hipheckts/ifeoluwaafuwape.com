@@ -1,28 +1,73 @@
 import React from 'react';
-import { Youtube, ExternalLink, Play, Radio } from 'lucide-react';
+import { Youtube, ExternalLink, Play, Radio, Clock } from 'lucide-react';
 
 export default function Podcast() {
+  const playlistId = "PLE1d6q-CHei7ryhzDE6vhtlhC0vAzqoCE";
+  const playlistUrl = `https://www.youtube.com/playlist?list=${playlistId}`;
+
   const episodes = [
     {
-      title: "Self-Taught: From One Room in Lagos to UK Tech Leader | A Father's Legacy",
-      id: "HAoHfqRWkO1MWhhKdUhg3GzPoWA1_4N7Jn3mkk1ZY3RA", // video ID / embed
-      embedUrl: "https://www.youtube.com/embed/videoseries?list=PL4n4tM-nL4rF2kZ5Y_M-s7z2qZ_5z5z5z", // fallback playlist embed
-      fallbackUrl: "https://www.youtube.com/@if_heckt",
-      description: "In this deeply personal episode of TechChat with Ife, I share my journey from learning to code in a single room in Lagos to becoming an Engineering Manager & Certified Cloud Architect in the UK."
+      title: "TechChat with Ife: Agentic AI - Game changer for Engineers",
+      guest: "Adewale Abati (Ace)",
+      duration: "43:25",
+      index: 0,
+      description: "Exploring the evolution of Agentic AI, its impact on software engineering jobs, data security, and maintaining foundational engineering skills alongside AI automation."
     },
     {
-      title: "Innovating the Future: Becoming an Innovator & Technology Strategist",
-      id: "innovating-future-techchat",
-      embedUrl: "https://www.youtube.com/embed?listType=user_uploads&list=if_heckt",
-      fallbackUrl: "https://www.youtube.com/@if_heckt",
-      description: "Exploring enterprise technology trends, microservices, cloud migrations, and advice for engineers aspiring to step into technical leadership roles."
+      title: "TechChat with Ife: Shaping your journey into global TECH",
+      guest: "Uzoma James",
+      duration: "38:26",
+      index: 1,
+      description: "Actionable guidance and career strategies for navigating transitions and building a successful career in the global technology industry."
     },
     {
-      title: "TechChat with Ife: AI Transformation & Modern Engineering Stacks",
-      id: "ai-transformation-techchat",
-      embedUrl: "https://www.youtube.com/embed?listType=user_uploads&list=if_heckt",
-      fallbackUrl: "https://www.youtube.com/@if_heckt",
-      description: "Deep dive into real-world AI integration in regulated industries, Cloudflare edge compute, and high-concurrency microservices design."
+      title: "TechChat with Ife: Tech Talent Opportunities",
+      guest: "Ademulegun (Ade') Olowojoba",
+      duration: "44:42",
+      index: 2,
+      description: "Unpacking emerging tech talent opportunities, skill demand in international markets, and strategies for career advancement."
+    },
+    {
+      title: "TechChat with Ife: Your Security is Your Responsibility",
+      guest: "Dr Iretioluwa Akerele",
+      duration: "41:16",
+      index: 3,
+      description: "Essential cybersecurity practices, personal security responsibilities, data privacy, and shielding digital platforms from threats."
+    },
+    {
+      title: "TechChat with Ife: Redefining the HUMAN role in an AI-POWERED World",
+      guest: "Rob McCargow",
+      duration: "30:59",
+      index: 4,
+      description: "Discussing human-AI collaboration, ethics, leadership, and how tech professionals can position themselves in an increasingly automated workforce."
+    },
+    {
+      title: "Innovating the Future: Becoming an Innovator",
+      guest: "Romano Pravdic",
+      duration: "42:34",
+      index: 5,
+      description: "Insights into innovation mindset, building scalable tech products from scratch, and driving digital transformation."
+    },
+    {
+      title: "Innovating the Future: Becoming an Innovator (Highlight Teaser)",
+      guest: "Romano Pravdic",
+      duration: "0:58",
+      index: 6,
+      description: "Key highlight and teaser on the innovation mindset and product strategy."
+    },
+    {
+      title: "Maximising Social Media",
+      guest: "Expert Panel",
+      duration: "1:21:35",
+      index: 7,
+      description: "Masterclass on personal branding, digital leverage, content strategy, and maximizing social platforms for tech professionals."
+    },
+    {
+      title: "TechChat with Ife: Dream Big, Put in the Work",
+      guest: "Yetunde Shopeju & Panel",
+      duration: "33:13",
+      index: 8,
+      description: "Inspiring conversation on grit, execution, discipline, and building high-impact tech careers."
     }
   ];
 
@@ -34,78 +79,126 @@ export default function Podcast() {
             <Radio size={20} style={{ color: 'var(--accent)' }} /> techchat_with_ife
           </h2>
           <a
-            href="https://www.youtube.com/@if_heckt"
+            href={playlistUrl}
             target="_blank"
             rel="noreferrer"
             className="social-btn"
             style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}
           >
-            <Youtube size={16} /> Subscribe on YouTube <ExternalLink size={12} />
+            <Youtube size={16} /> Open Full Playlist <ExternalLink size={12} />
           </a>
         </div>
 
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95 realm' }}>
-          <strong>TechChat with Ife</strong> is my podcast and video series exploring software architecture, engineering leadership, cloud computing, career growth, and emerging technologies.
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem' }}>
+          <strong>TechChat with Ife</strong> is a video podcast series hosted by <strong>Ifeoluwa Afuwape</strong> exploring software architecture, AI transformation, cybersecurity, global tech careers, and engineering leadership.
         </p>
 
-        {/* Featured YouTube Channel Embed Player Container */}
-        <div
-          style={{
-            position: 'relative',
-            paddingBottom: '56.25%', /* 16:9 Aspect Ratio */
-            height: 0,
-            overflow: 'hidden',
-            borderRadius: '12px',
-            border: '1px solid var(--border-color)',
-            backgroundColor: '#000',
-            marginBottom: '3rem',
-          }}
-        >
-          <iframe
-            title="TechChat with Ife - Latest Videos"
-            src="https://www.youtube.com/embed?listType=user_uploads&list=if_heckt"
+        {/* Master Playlist Player */}
+        <div style={{ marginBottom: '3rem' }}>
+          <div className="developer-tag" style={{ marginBottom: '0.75rem' }}>// Full Playlist Stream</div>
+          <div
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              border: 0,
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              overflow: 'hidden',
+              borderRadius: '12px',
+              border: '1px solid var(--border-color)',
+              backgroundColor: '#000',
             }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+          >
+            <iframe
+              title="TechChat with Ife Master Playlist"
+              src={`https://www.youtube.com/embed/videoseries?list=${playlistId}`}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 0,
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
 
-        {/* Episode List */}
+        {/* Individual Episode iFrames Grid */}
         <div className="section-header">
-          <h3 className="section-title">episodes_&_discussions</h3>
+          <h3 className="section-title">all_episodes ({episodes.length})</h3>
         </div>
 
-        <div className="articles-list">
-          {episodes.map((ep, index) => (
-            <div key={index} className="article-card" style={{ cursor: 'default' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <span className="tag" style={{ fontSize: '0.7rem' }}>
-                  Episode #{index + 1}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+          {episodes.map((ep) => (
+            <div
+              key={ep.index}
+              style={{
+                backgroundColor: 'var(--bg-secondary)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '12px',
+                padding: '1.25rem',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <span className="tag" style={{ fontSize: '0.75rem', fontWeight: 600 }}>
+                  Episode #{ep.index + 1}
                 </span>
-                <span className="article-meta">• YouTube Video</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Clock size={14} /> {ep.duration}
+                  </span>
+                  <span>•</span>
+                  <span>Guest: {ep.guest}</span>
+                </div>
               </div>
 
-              <h4 className="article-title">{ep.title}</h4>
-              <p className="article-excerpt" style={{ marginTop: '0.5rem' }}>
+              <h4 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                {ep.title}
+              </h4>
+
+              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '1rem' }}>
                 {ep.description}
               </p>
 
-              <div style={{ marginTop: '1rem' }}>
+              {/* Individual Episode iframe Embed */}
+              <div
+                style={{
+                  position: 'relative',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  overflow: 'hidden',
+                  borderRadius: '8px',
+                  border: '1px solid var(--border-color)',
+                  backgroundColor: '#000',
+                  marginBottom: '1rem',
+                }}
+              >
+                <iframe
+                  title={ep.title}
+                  src={`https://www.youtube.com/embed/videoseries?list=${playlistId}&index=${ep.index}`}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 0,
+                  }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              <div>
                 <a
-                  href="https://www.youtube.com/@if_heckt"
+                  href={`${playlistUrl}`}
                   target="_blank"
                   rel="noreferrer"
                   className="social-btn"
-                  style={{ display: 'inline-flex', padding: '0.35rem 0.75rem', fontSize: '0.8rem' }}
+                  style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
                 >
-                  <Play size={14} /> Watch Episode on YouTube
+                  <Play size={14} /> Watch Episode #{ep.index + 1} on YouTube <ExternalLink size={12} />
                 </a>
               </div>
             </div>
