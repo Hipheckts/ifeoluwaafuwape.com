@@ -13,7 +13,7 @@ export default function Home() {
         <div className="developer-tag">whoami</div>
         <h1 className="hero-name">Ifeoluwa Afuwape</h1>
         <p className="hero-title">
-          Engineering Manager & Certified Cloud Architect (GCP / AWS)
+          Senior Software Engineer | Engineering Manager | Professional Cloud Architect
         </p>
         <p className="hero-bio">
           UK-qualified engineering manager and technology leader with about ten years of experience specializing in designing and deploying high-scale, mission-critical systems across regulated financial services, FinTech, Higher Ed, and enterprise domains.
@@ -49,7 +49,7 @@ export default function Home() {
       {/* Certifications Highlight */}
       <section className="section" style={{ marginTop: '2.5rem' }}>
         <div className="section-header">
-          <h2 className="section-title">certifications_&_architecture</h2>
+          <h2 className="section-title">certifications_&_awards</h2>
         </div>
         <div className="grid-cards">
           <div className="card">
