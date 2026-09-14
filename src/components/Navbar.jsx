@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="container nav-container">
         <NavLink to="/" className="brand">
           <span className="brand-dot"></span>
-          <span>ifeoluwa.dev</span>
+          <span>ifeoluwaafuwape.xyz</span>
         </NavLink>
 
         <nav>
@@ -44,6 +44,16 @@ export default function Navbar() {
             <li>
               <NavLink to="/articles" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                 /articles
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/speaking" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                /speaking
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/podcast" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                /podcast
               </NavLink>
             </li>
             <li>

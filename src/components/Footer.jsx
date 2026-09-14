@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-content">
         <div>
-          <span>© {new Date().getFullYear()} Ifeoluwa Afuwape (Hipheckts)</span>
+          <span>© {new Date().getFullYear()} Ifeoluwa Afuwape • ifeoluwaafuwape.xyz</span>
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <a href="https://github.com/hipheckts" target="_blank" rel="noreferrer" aria-label="GitHub">
@@ -15,7 +15,7 @@ export default function Footer() {
           <a href="https://www.linkedin.com/in/ifeoluwa-afuwape" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <Linkedin size={16} />
           </a>
-          <a href="https://www.youtube.com/@hipheckt" target="_blank" rel="noreferrer" aria-label="YouTube">
+          <a href="https://www.youtube.com/@if_heckt" target="_blank" rel="noreferrer" aria-label="YouTube Channel">
             <Youtube size={16} />
           </a>
           <a href="mailto:hipheckt@gmail.com" aria-label="Email">

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Youtube, Mail, FileText, ArrowRight, ExternalLink, ShieldCheck } from 'lucide-react';
+import { Github, Linkedin, Youtube, Mail, ShieldCheck, Radio, Mic, ArrowRight, ExternalLink } from 'lucide-react';
 import { getAllArticles } from '../utils/markdownLoader';
 
 export default function Home() {
-  const articles = getAllArticles().slice(0, 2);
+  const articles = getAllArticles().slice(0, 3);
 
   return (
     <div className="container">
@@ -13,17 +13,16 @@ export default function Home() {
         <div className="developer-tag">whoami</div>
         <h1 className="hero-name">Ifeoluwa Afuwape</h1>
         <p className="hero-title">
-          Senior Software Engineer & Web Development Manager at Newcastle University
+          Engineering Manager & Certified Cloud Architect (GCP / AWS)
         </p>
         <p className="hero-bio">
-          I build resilient cloud infrastructures, accessible web platforms, and mobile solutions. 
-          GCP Certified Professional Cloud Architect with extensive experience leading engineering teams and building scalable web & mobile apps.
+          UK-qualified engineering manager and technology leader with about ten years of experience specializing in designing and deploying high-scale, mission-critical systems across regulated financial services, FinTech, Higher Ed, and enterprise domains.
         </p>
 
         <div>
           <span className="status-badge">
             <span className="status-indicator"></span>
-            <span>Based in Newcastle upon Tyne, UK</span>
+            <span>Web Development Manager @ Newcastle University • Newcastle upon Tyne, UK</span>
           </span>
         </div>
 
@@ -36,7 +35,7 @@ export default function Home() {
             <Linkedin size={16} />
             <span>LinkedIn</span>
           </a>
-          <a href="https://www.youtube.com/@hipheckt" target="_blank" rel="noreferrer" className="social-btn">
+          <a href="https://www.youtube.com/@if_heckt" target="_blank" rel="noreferrer" className="social-btn">
             <Youtube size={16} />
             <span>YouTube</span>
           </a>
@@ -50,13 +49,13 @@ export default function Home() {
       {/* Certifications Highlight */}
       <section className="section" style={{ marginTop: '2.5rem' }}>
         <div className="section-header">
-          <h2 className="section-title">certifications</h2>
+          <h2 className="section-title">certifications_&_architecture</h2>
         </div>
         <div className="grid-cards">
           <div className="card">
             <div>
               <div className="card-title">
-                <span>GCP Professional Cloud Architect</span>
+                <span>Google Cloud Professional Cloud Architect</span>
                 <ShieldCheck size={18} />
               </div>
               <p className="card-desc" style={{ marginTop: '0.5rem' }}>
@@ -64,16 +63,16 @@ export default function Home() {
               </p>
             </div>
             <div className="tags-list">
-              <span className="tag">Cloud Architecture</span>
+              <span className="tag">Distributed Systems</span>
               <span className="tag">GCP</span>
-              <span className="tag">DevOps</span>
+              <span className="tag">IaC</span>
             </div>
           </div>
 
           <div className="card">
             <div>
               <div className="card-title">
-                <span>GCP Cloud Digital Leader</span>
+                <span>Google Cloud Digital Leader</span>
                 <ShieldCheck size={18} />
               </div>
               <p className="card-desc" style={{ marginTop: '0.5rem' }}>
@@ -88,10 +87,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Articles Section */}
+      {/* TechChat Podcast Section */}
       <section className="section">
         <div className="section-header">
-          <h2 className="section-title">latest_articles</h2>
+          <h2 className="section-title">
+            <Radio size={18} style={{ color: 'var(--accent)' }} /> techchat_podcast
+          </h2>
+          <Link to="/podcast" className="see-all-link">
+            all_episodes →
+          </Link>
+        </div>
+
+        <div
+          style={{
+            position: 'relative',
+            paddingBottom: '56.25%',
+            height: 0,
+            overflow: 'hidden',
+            borderRadius: '10px',
+            border: '1px solid var(--border-color)',
+            backgroundColor: '#000',
+          }}
+        >
+          <iframe
+            title="TechChat with Ife Latest"
+            src="https://www.youtube.com/embed?listType=user_uploads&list=if_heckt"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              border: 0,
+            }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </section>
+
+      {/* Conference Speaking Highlight */}
+      <section className="section">
+        <div className="section-header">
+          <h2 className="section-title">
+            <Mic size={18} style={{ color: 'var(--accent)' }} /> conference_speaking
+          </h2>
+          <Link to="/speaking" className="see-all-link">
+            view_talks →
+          </Link>
+        </div>
+
+        <div className="card">
+          <div className="item-header">
+            <span className="item-title" style={{ fontSize: '1.05rem' }}>
+              AI Adoption & Enterprise Technology Strategy in the UK North East
+            </span>
+            <span className="item-date">TechNExt 2026</span>
+          </div>
+          <p className="card-desc" style={{ marginTop: '0.5rem' }}>
+            Panel discussion on deploying AI tools and advanced analytics within heavily regulated enterprise domains, bridging business requirements with distributed systems design.
+          </p>
+          <div className="tags-list" style={{ marginTop: '0.75rem' }}>
+            <span className="tag">#AI Transformation</span>
+            <span className="tag">#TechNExt 2026</span>
+            <span className="tag">#Enterprise Architecture</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Articles Section */}
+      <section className="section">
+        <div className="section-header">
+          <h2 className="section-title">articles_&_writing</h2>
           <Link to="/articles" className="see-all-link">
             view_all →
           </Link>
@@ -116,38 +183,6 @@ export default function Home() {
               </div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section className="section">
-        <div className="section-header">
-          <h2 className="section-title">featured_projects</h2>
-          <Link to="/projects" className="see-all-link">
-            all_projects →
-          </Link>
-        </div>
-
-        <div className="grid-cards">
-          <div className="card">
-            <div>
-              <div className="card-title">
-                <span>Flutter 2FA</span>
-                <a href="https://pub.dev/packages/flutter_2fa" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)' }}>
-                  <ExternalLink size={16} />
-                </a>
-              </div>
-              <p className="card-desc" style={{ marginTop: '0.5rem' }}>
-                🔐 Open-source Dart package to add Two-Factor Authentication (2FA) in Flutter projects with ease via Firebase Auth and Firestore.
-              </p>
-            </div>
-            <div className="tags-list">
-              <span className="tag">Flutter</span>
-              <span className="tag">Dart</span>
-              <span className="tag">Firebase</span>
-              <span className="tag">Firestore</span>
-            </div>
-          </div>
         </div>
       </section>
     </div>

@@ -7,6 +7,8 @@ import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Articles from './pages/Articles';
 import ArticleDetail from './pages/ArticleDetail';
+import Speaking from './pages/Speaking';
+import Podcast from './pages/Podcast';
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/articles/:slug" element={<ArticleDetail />} />
+            <Route path="/speaking" element={<Speaking />} />
+            <Route path="/podcast" element={<Podcast />} />
           </Routes>
         </main>
         <Footer />

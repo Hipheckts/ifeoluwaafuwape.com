@@ -1,37 +1,51 @@
 import React from 'react';
-import { ExternalLink, Github, Package } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 export default function Projects() {
   const projects = [
     {
-      title: "Flutter 2FA",
-      category: "Pub.dev Package",
-      link: "https://pub.dev/packages/flutter_2fa",
-      github: "https://github.com/Hipheckts/Flutter-2FA",
-      version: "v1.0.4",
-      description: "🔐 Open-source Dart package to help developers add Two-Factor Authentication (2FA) in any Flutter project with ease. Uses Firebase Auth and Firestore to encrypt and store 2FA secrets and generate QR codes.",
-      tags: ["Flutter", "Dart", "Firebase", "Firestore", "Authentication"]
-    },
-    {
-      title: "Energy Analysis Web Platform",
-      category: "Client Application",
-      version: "Northumbria Univ",
-      description: "Web application developed for Northumbria University to facilitate energy analysis for undergraduate students studying energy and environmental engineering.",
-      tags: ["React", "JavaScript", "Data Visualization", "Energy Analysis"]
+      title: "MTN Nigeria High-Scale Ecosystem",
+      category: "Enterprise Solution",
+      version: "70M+ Subscribers",
+      description: "Flagship full-stack web and mobile platform for MTN Nigeria. Architected Docker microservices, real-time location-tracking ingestion, OneSignal notification channels, and C# .NET payment gateway integrations (Stripe, Paystack, PayPal). Serves 70M+ subscriber base.",
+      tags: ["TypeScript", "Node.js", "C# .NET", "Docker", "Cloudflare", "React Native"]
     },
     {
       title: "Entrepreneurs Trust Fund (ETF)",
-      category: "Enterprise Web & Mobile",
-      version: "300k+ Users",
-      description: "Web & mobile apps platform for Africa's Young Entrepreneurs, serving over 300,000 active users across Africa with mobile app downloads on Google Play Store and Apple App Store.",
-      tags: ["ReactJS", "Flutter", "Laravel PHP", "MySQL", "AWS"]
+      category: "Enterprise Platform",
+      version: "300k+ Active Users",
+      description: "Cross-border web and mobile application ecosystem for Africa's Young Entrepreneurs serving 300,000+ active users. Migrated entire mobile application ecosystem from Flutter to React Native, standardizing codebases across iOS and Android.",
+      tags: ["React Native", "Laravel PHP", "AWS", "React.js", "MySQL"]
     },
     {
-      title: "MTN Nigeria Service Web Apps",
-      category: "Enterprise Solution",
-      version: "70M+ User Base",
-      description: "Flagship web and mobile service applications for MTN Nigeria, optimizing digital customer experience for up to 70 million subscribers.",
-      tags: ["JavaScript", "TypeScript", "NodeJS", "PHP", "Microservices"]
+      title: "Lawyers NowNow Mobile App",
+      category: "Award-Winning CSR App",
+      version: "Headfort Foundation",
+      description: "Award-winning CSR mobile application connecting low-income citizens with pro-bono defense lawyers across Nigeria for emergency legal intervention, prison reform, and police brutality advocacy.",
+      tags: ["React Native", "Node.js", "Social Impact", "Geolocation"]
+    },
+    {
+      title: "Northumbria Energy Analytics Engine",
+      category: "Contract Research App",
+      version: "Northumbria Univ",
+      description: "Data-driven web application for large-scale energy analysis. Built real-time weather and energy REST/GraphQL API data ingestion pipelines paired with client-side mathematical models to predict energy consumption trends.",
+      tags: ["React", "TypeScript", "GraphQL", "Data Engineering", "Web Workers"]
+    },
+    {
+      title: "Flutter 2FA Package",
+      category: "Pub.dev Open Source",
+      link: "https://pub.dev/packages/flutter_2fa",
+      github: "https://github.com/Hipheckts/Flutter-2FA",
+      version: "v1.0.4",
+      description: "🔐 Open-source Dart package to help developers integrate Two-Factor Authentication (2FA) into any Flutter app with Firebase Auth and Firestore secret encryption.",
+      tags: ["Flutter", "Dart", "Firebase", "Firestore", "Authentication"]
+    },
+    {
+      title: "University E-Voting System",
+      category: "Civic Tech Platform",
+      version: "FUNAAB Student Union",
+      description: "First automated digital e-voting system developed for the Federal University of Agriculture Abeokuta student union election during Mozilla Student Ambassador program.",
+      tags: ["PHP", "JavaScript", "Security", "MySQL"]
     }
   ];
 
@@ -39,10 +53,10 @@ export default function Projects() {
     <div className="container">
       <section className="section" style={{ marginTop: '0' }}>
         <div className="section-header">
-          <h2 className="section-title">projects_&_packages</h2>
+          <h2 className="section-title">featured_projects</h2>
         </div>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem' }}>
-          Selected open-source packages, client platforms, and enterprise applications built throughout my engineering career.
+          Key enterprise platforms, open-source packages, and award-winning solutions built across my engineering tenure.
         </p>
 
         <div className="grid-cards">
@@ -66,7 +80,7 @@ export default function Projects() {
                     )}
                   </div>
                 </div>
-                <h3 className="card-title" style={{ fontSize: '1.1rem' }}>
+                <h3 className="card-title" style={{ fontSize: '1.05rem' }}>
                   <span>{proj.title}</span>
                   {proj.version && (
                     <span className="item-date" style={{ fontSize: '0.75rem' }}>
