@@ -1,9 +1,9 @@
-import React from 'react';
-import { Youtube, ExternalLink, Play, Radio, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Youtube, ExternalLink, Play, Radio, Clock, User } from 'lucide-react';
 
 export default function Podcast() {
   const playlistId = "PLE1d6q-CHei7ryhzDE6vhtlhC0vAzqoCE";
-  const playlistUrl = `https://www.youtube.com/playlist?list=${playlistId}`;
+  const [activeEpisodeIndex, setActiveEpisodeIndex] = useState(0);
 
   const episodes = [
     {
@@ -71,6 +71,13 @@ export default function Podcast() {
     }
   ];
 
+  const currentEpisode = episodes[activeEpisodeIndex] || episodes[0];
+
+  const playEpisode = (index) => {
+    setActiveEpisodeIndex(index);
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  };
+
   return (
     <div className="container">
       <section className="section" style={{ marginTop: '0' }}>
@@ -79,7 +86,7 @@ export default function Podcast() {
             <Radio size={20} style={{ color: 'var(--accent)' }} /> techchat_with_ife
           </h2>
           <a
-            href={playlistUrl}
+            href={`https://www.youtube.com/playlist?list=${playlistId}`}
             target="_blank"
             rel="noreferrer"
             className="social-btn"
@@ -93,85 +100,144 @@ export default function Podcast() {
           <strong>TechChat with Ife</strong> is a video podcast series hosted by <strong>Ifeoluwa Afuwape</strong> exploring software architecture, AI transformation, cybersecurity, global tech careers, and engineering leadership.
         </p>
 
-        {/* All Episodes List */}
-        <div className="section-header">
-          <h3 className="section-title">episodes ({episodes.length})</h3>
+        {/* Master Interactive Player */}
+        <div style={{ marginBottom: '3rem' }}>
+          <div
+            style={{
+              display: 'flex',
+              justify: 'space-between',
+              alignItems: 'center',
+              marginBottom: '0.75rem',
+              flexWrap: 'wrap',
+              gap: '0.5rem',
+            }}
+          >
+            <span className="developer-tag">// Currently Loaded: Episode #{currentEpisode.index + 1}</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+              {currentEpisode.guest} ({currentEpisode.duration})
+            </span>
+          </div>
+
+          <div
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              overflow: 'hidden',
+              borderRadius: '12px',
+              border: '1px solid var(--border-focus)',
+              backgroundColor: '#000',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            <iframe
+              key={activeEpisodeIndex}
+              title={currentEpisode.title}
+              src={`https://www.youtube.com/embed/videoseries?list=${playlistId}&index=${activeEpisodeIndex}&autoplay=1`}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 0,
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          <div
+            style={{
+              marginTop: '0.85rem',
+              padding: '1rem',
+              backgroundColor: 'var(--bg-secondary)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '8px',
+            }}
+          >
+            <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
+              {currentEpisode.title}
+            </h3>
+            <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+              {currentEpisode.description}
+            </p>
+          </div>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-          {episodes.map((ep) => (
-            <div
-              key={ep.index}
-              style={{
-                backgroundColor: 'var(--bg-secondary)',
-                border: '1px solid var(--border-color)',
-                borderRadius: '12px',
-                padding: '1.25rem',
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <span className="tag" style={{ fontSize: '0.75rem', fontWeight: 600 }}>
-                  Episode #{ep.index + 1}
-                </span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <Clock size={14} /> {ep.duration}
-                  </span>
-                  <span>•</span>
-                  <span>Guest: {ep.guest}</span>
-                </div>
-              </div>
+        {/* Episodes Directory */}
+        <div className="section-header">
+          <h3 className="section-title">all_episodes ({episodes.length})</h3>
+        </div>
 
-              <h4 style={{ fontSize: '1.15rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                {ep.title}
-              </h4>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+          {episodes.map((ep) => {
+            const isActive = ep.index === activeEpisodeIndex;
 
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '1.25rem' }}>
-                {ep.description}
-              </p>
-
-              {/* Episode iframe Embed */}
+            return (
               <div
+                key={ep.index}
                 style={{
-                  position: 'relative',
-                  paddingBottom: '56.25%',
-                  height: 0,
-                  overflow: 'hidden',
-                  borderRadius: '8px',
-                  border: '1px solid var(--border-color)',
-                  backgroundColor: '#000',
-                  marginBottom: '1rem',
+                  backgroundColor: isActive ? 'var(--bg-tertiary)' : 'var(--bg-secondary)',
+                  border: `1px solid ${isActive ? 'var(--accent)' : 'var(--border-color)'}`,
+                  borderRadius: '10px',
+                  padding: '1.25rem',
+                  transition: 'all 0.15s ease',
                 }}
               >
-                <iframe
-                  title={ep.title}
-                  src={`https://www.youtube.com/embed/videoseries?list=${playlistId}&index=${ep.index}`}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    border: 0,
-                  }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                  <span className="tag" style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: isActive ? 'var(--accent)' : 'var(--tag-bg)', color: isActive ? 'var(--accent-inverse)' : 'var(--text-secondary)' }}>
+                    Episode #{ep.index + 1} {isActive ? '• Active' : ''}
+                  </span>
 
-              <div>
-                <a
-                  href={playlistUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-btn"
-                  style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
-                >
-                  <Play size={14} /> Watch Episode #{ep.index + 1} on YouTube <ExternalLink size={12} />
-                </a>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                      <User size={13} /> {ep.guest}
+                    </span>
+                    <span>•</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                      <Clock size={13} /> {ep.duration}
+                    </span>
+                  </div>
+                </div>
+
+                <h4 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
+                  {ep.title}
+                </h4>
+
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: '1.5', marginBottom: '1rem' }}>
+                  {ep.description}
+                </p>
+
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <button
+                    onClick={() => playEpisode(ep.index)}
+                    className="social-btn"
+                    style={{
+                      fontSize: '0.8rem',
+                      padding: '0.4rem 0.85rem',
+                      backgroundColor: isActive ? 'var(--accent)' : 'var(--bg-primary)',
+                      color: isActive ? 'var(--accent-inverse)' : 'var(--text-primary)',
+                      cursor: 'pointer',
+                      border: '1px solid var(--border-focus)',
+                    }}
+                  >
+                    <Play size={14} /> {isActive ? 'Now Playing' : `Play Episode #${ep.index + 1}`}
+                  </button>
+
+                  <a
+                    href={`https://www.youtube.com/watch?v=playlist&list=${playlistId}&index=${ep.index}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="social-btn"
+                    style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
+                  >
+                    <Youtube size={14} /> Watch on YouTube <ExternalLink size={12} />
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </div>
