@@ -4,18 +4,20 @@ import { Mic, Calendar, MapPin, ExternalLink, Video } from 'lucide-react';
 export default function Speaking() {
   const talks = [
     {
-      title: "AI Adoption & Enterprise Technology Strategy in the UK North East",
-      event: "TechNExt 2026",
-      role: "Panelist & Keynote Speaker",
-      date: "June 2026",
+      title: "Redefining your career with AI",
+      event: "TechNExt 2026 — Data & AI Hub",
+      role: "Panelist & Featured Speaker",
+      date: "Thursday, June 18, 2026",
       location: "Newcastle upon Tyne, UK",
-      description: "Discussed practical strategies for deploying AI tools and advanced analytics within heavily regulated enterprise sectors, bridging executive strategy with executable cloud-native architectures.",
-      tags: ["AI Strategy", "Enterprise Architecture", "Cloud Transformation"]
+      panelists: "Ifeoluwa Afuwape (Newcastle Univ), Jason Yip (Newcastle Univ), Angela Hudachek (PwC), Arshia Bhatti (PwC)",
+      description: "Engaging panel session on how artificial intelligence is reshaping the modern workplace and redefining career paths across industries. Explored key trends in AI adoption, impacted roles, real-world case studies, and practical ways to upskill and stay competitive.",
+      link: "https://www.technext.co.uk/programme/events/redefining-your-career-with-ai-npqdj",
+      tags: ["AI Transformation", "TechNExt 2026", "Enterprise Tech", "Career Upskilling"]
     },
     {
       title: "Self-Taught: From One Room in Lagos to UK Tech Leader | A Father's Legacy",
       event: "TechChat Keynote Series",
-      role: "Featured Speaker",
+      role: "Featured Keynote Speaker",
       date: "March 2025",
       location: "Newcastle upon Tyne, UK",
       description: "Inspiring talk detailing my career journey from self-taught developer in Lagos to UK-qualified Engineering Manager and GCP Certified Professional Cloud Architect.",
@@ -72,7 +74,7 @@ export default function Speaking() {
                 <span className="item-date">{talk.date}</span>
               </div>
               
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '0.25rem', fontSize: '0.85rem', color: 'var(--text-secondary)', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.25rem', fontSize: '0.85rem', color: 'var(--text-secondary)', flexWrap: 'wrap' }}>
                 <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{talk.event}</span>
                 <span>•</span>
                 <span>{talk.role}</span>
@@ -81,6 +83,12 @@ export default function Speaking() {
                   <MapPin size={12} /> {talk.location}
                 </span>
               </div>
+
+              {talk.panelists && (
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem', fontFamily: 'var(--font-mono)' }}>
+                  Panelists: {talk.panelists}
+                </p>
+              )}
 
               <p className="item-description" style={{ marginTop: '0.65rem' }}>
                 {talk.description}
@@ -95,8 +103,7 @@ export default function Speaking() {
                     className="social-btn"
                     style={{ padding: '0.35rem 0.65rem', fontSize: '0.775rem' }}
                   >
-                    <Video size={14} />
-                    <span>Watch Talk on YouTube</span>
+                    <span>View Session Details</span>
                     <ExternalLink size={12} />
                   </a>
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Youtube, Mail, ShieldCheck, Radio, Mic, ArrowRight, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Youtube, Mail, ShieldCheck, Radio, Mic, ExternalLink } from 'lucide-react';
 import { getAllArticles } from '../utils/markdownLoader';
 
 export default function Home() {
@@ -87,6 +87,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Conference Speaking Highlight */}
+      <section className="section">
+        <div className="section-header">
+          <h2 className="section-title">
+            <Mic size={18} style={{ color: 'var(--accent)' }} /> featured_conference_talk
+          </h2>
+          <Link to="/speaking" className="see-all-link">
+            view_talks →
+          </Link>
+        </div>
+
+        <div className="card">
+          <div className="item-header">
+            <span className="item-title" style={{ fontSize: '1.05rem' }}>
+              Redefining your career with AI
+            </span>
+            <span className="item-date">TechNExt 2026</span>
+          </div>
+          <span className="item-subtitle">Data & AI Hub • Panelist (Newcastle University & PwC)</span>
+          <p className="card-desc" style={{ marginTop: '0.5rem' }}>
+            Panel session exploring how artificial intelligence is reshaping modern career paths across industries, practical strategies to adapt and upskill, and real-world enterprise AI adoption case studies.
+          </p>
+          <div style={{ marginTop: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+            <div className="tags-list">
+              <span className="tag">#AI Career Transformation</span>
+              <span className="tag">#TechNExt 2026</span>
+              <span className="tag">#Panelist</span>
+            </div>
+            <a
+              href="https://www.technext.co.uk/programme/events/redefining-your-career-with-ai-npqdj"
+              target="_blank"
+              rel="noreferrer"
+              className="social-btn"
+              style={{ fontSize: '0.775rem', padding: '0.3rem 0.65rem' }}
+            >
+              <span>View TechNExt Event</span>
+              <ExternalLink size={12} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* TechChat Podcast Section */}
       <section className="section">
         <div className="section-header">
@@ -111,7 +153,7 @@ export default function Home() {
         >
           <iframe
             title="TechChat with Ife Latest"
-            src="https://www.youtube.com/embed?listType=user_uploads&list=if_heckt"
+            src="https://www.youtube.com/embed/videoseries?list=PLE1d6q-CHei7ryhzDE6vhtlhC0vAzqoCE"
             style={{
               position: 'absolute',
               top: 0,
@@ -123,35 +165,6 @@ export default function Home() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-        </div>
-      </section>
-
-      {/* Conference Speaking Highlight */}
-      <section className="section">
-        <div className="section-header">
-          <h2 className="section-title">
-            <Mic size={18} style={{ color: 'var(--accent)' }} /> conference_speaking
-          </h2>
-          <Link to="/speaking" className="see-all-link">
-            view_talks →
-          </Link>
-        </div>
-
-        <div className="card">
-          <div className="item-header">
-            <span className="item-title" style={{ fontSize: '1.05rem' }}>
-              AI Adoption & Enterprise Technology Strategy in the UK North East
-            </span>
-            <span className="item-date">TechNExt 2026</span>
-          </div>
-          <p className="card-desc" style={{ marginTop: '0.5rem' }}>
-            Panel discussion on deploying AI tools and advanced analytics within heavily regulated enterprise domains, bridging business requirements with distributed systems design.
-          </p>
-          <div className="tags-list" style={{ marginTop: '0.75rem' }}>
-            <span className="tag">#AI Transformation</span>
-            <span className="tag">#TechNExt 2026</span>
-            <span className="tag">#Enterprise Architecture</span>
-          </div>
         </div>
       </section>
 
