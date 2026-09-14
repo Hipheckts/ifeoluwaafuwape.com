@@ -85,7 +85,7 @@ export default function Podcast() {
             className="social-btn"
             style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}
           >
-            <Youtube size={16} /> Open Full Playlist <ExternalLink size={12} />
+            <Youtube size={16} /> Open YouTube Playlist <ExternalLink size={12} />
           </a>
         </div>
 
@@ -93,40 +93,9 @@ export default function Podcast() {
           <strong>TechChat with Ife</strong> is a video podcast series hosted by <strong>Ifeoluwa Afuwape</strong> exploring software architecture, AI transformation, cybersecurity, global tech careers, and engineering leadership.
         </p>
 
-        {/* Master Playlist Player */}
-        <div style={{ marginBottom: '3rem' }}>
-          <div className="developer-tag" style={{ marginBottom: '0.75rem' }}>// Full Playlist Stream</div>
-          <div
-            style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
-              height: 0,
-              overflow: 'hidden',
-              borderRadius: '12px',
-              border: '1px solid var(--border-color)',
-              backgroundColor: '#000',
-            }}
-          >
-            <iframe
-              title="TechChat with Ife Master Playlist"
-              src={`https://www.youtube.com/embed/videoseries?list=${playlistId}`}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 0,
-              }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-
-        {/* Individual Episode iFrames Grid */}
+        {/* All Episodes List */}
         <div className="section-header">
-          <h3 className="section-title">all_episodes ({episodes.length})</h3>
+          <h3 className="section-title">episodes ({episodes.length})</h3>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
@@ -157,11 +126,11 @@ export default function Podcast() {
                 {ep.title}
               </h4>
 
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '1.25rem' }}>
                 {ep.description}
               </p>
 
-              {/* Individual Episode iframe Embed */}
+              {/* Episode iframe Embed */}
               <div
                 style={{
                   position: 'relative',
@@ -192,7 +161,7 @@ export default function Podcast() {
 
               <div>
                 <a
-                  href={`${playlistUrl}`}
+                  href={playlistUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="social-btn"
