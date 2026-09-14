@@ -1,6 +1,6 @@
 ---
 title: "Building Flutter 2FA: Adding Two-Factor Authentication to Mobile Apps"
-date: "2026-08-14"
+date: "2023-08-14"
 description: "How I built the open-source flutter_2fa package for seamless two-factor authentication using Firebase & Firestore."
 tags: ["Flutter", "Dart", "Firebase", "Security", "Open Source"]
 readTime: "4 min read"
