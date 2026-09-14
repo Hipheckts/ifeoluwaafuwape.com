@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mic, Calendar, MapPin, ExternalLink, Video } from 'lucide-react';
+import { Mic, MapPin, ExternalLink, Video } from 'lucide-react';
 
 export default function Speaking() {
   const talks = [
@@ -13,6 +13,17 @@ export default function Speaking() {
       description: "Engaging panel session on how artificial intelligence is reshaping the modern workplace and redefining career paths across industries. Explored key trends in AI adoption, impacted roles, real-world case studies, and practical ways to upskill and stay competitive.",
       link: "https://www.technext.co.uk/programme/events/redefining-your-career-with-ai-npqdj",
       tags: ["AI Transformation", "TechNExt 2026", "Enterprise Tech", "Career Upskilling"]
+    },
+    {
+      title: "Building & Activating 2FA in Flutter Applications",
+      event: "FlutterForward Extended Accra",
+      role: "Keynote Speaker & Live Demo",
+      date: "2023",
+      location: "Accra, Ghana",
+      embedId: "XwZcVRrHzTg",
+      description: "Delivered a live technical presentation and live code demonstration for the Ghana Flutter community on integrating Two-Factor Authentication (2FA) in Flutter mobile apps using the open-source flutter_2fa package.",
+      link: "https://www.youtube.com/watch?v=XwZcVRrHzTg",
+      tags: ["Flutter", "Dart", "Security", "Flutter Accra", "Mobile Dev"]
     },
     {
       title: "Self-Taught: From One Room in Lagos to UK Tech Leader | A Father's Legacy",
@@ -60,7 +71,7 @@ export default function Speaking() {
           <h2 className="section-title">speaking_&_conferences</h2>
         </div>
         <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem' }}>
-          Keynotes, panel discussions, and technical workshops on cloud architecture, engineering leadership, web accessibility, and AI transformation.
+          Keynotes, panel discussions, and technical workshops on cloud architecture, engineering leadership, Flutter mobile development, and AI transformation.
         </p>
 
         <div className="timeline">
@@ -94,6 +105,37 @@ export default function Speaking() {
                 {talk.description}
               </p>
 
+              {/* Embedded Video for talks with YouTube ID */}
+              {talk.embedId && (
+                <div
+                  style={{
+                    position: 'relative',
+                    paddingBottom: '56.25%',
+                    height: 0,
+                    overflow: 'hidden',
+                    borderRadius: '8px',
+                    border: '1px solid var(--border-color)',
+                    backgroundColor: '#000',
+                    margin: '1rem 0',
+                  }}
+                >
+                  <iframe
+                    title={talk.title}
+                    src={`https://www.youtube.com/embed/${talk.embedId}`}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      border: 0,
+                    }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+
               {talk.link && (
                 <div style={{ marginTop: '0.75rem' }}>
                   <a
@@ -103,7 +145,8 @@ export default function Speaking() {
                     className="social-btn"
                     style={{ padding: '0.35rem 0.65rem', fontSize: '0.775rem' }}
                   >
-                    <span>View Session Details</span>
+                    <Video size={14} />
+                    <span>Watch / View Talk Details</span>
                     <ExternalLink size={12} />
                   </a>
                 </div>
