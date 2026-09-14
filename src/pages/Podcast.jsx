@@ -73,7 +73,7 @@ export default function Podcast() {
     },
     {
       title: "TechChat with Ife: Dream Big, Put in the Work",
-      guest: "Yetunde Shopeju",
+      guest: "Habeeb Shopeju",
       duration: "33:13",
       index: 8,
       videoId: "JbFhZBrSDdo",
