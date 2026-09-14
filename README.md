@@ -1,388 +1,114 @@
-<div align="center">
-<img src="./public/readme/images/hipheckts-simple-portfolio.png" alt="logo"/>
-</div>
-<br />
-<div align="center">
-<a href=''>
-  <img src='https://img.shields.io/badge/license-MIT-red' alt='license' />
-  <img src='https://img.shields.io/badge/version-1.0.0-yellow' alt='license' />
- </a>
-</div>
-
-<div align="center">✨ Make your own portfolio! Easy and Fast. ✨</div>
-<br />
-
-[🇰🇷 한국어로 보기 🇰🇷](./README.ko.md)
-
-# 💫 ddongule-simple-portfolio
-
-🌟 This is a simple-portfolio template for Developers. You can customize this template to make your own portfolio. You don't have to understand the code. Just edit `db.json` and some assets(`images`, `markdowns`) then it's all done!
-
-## 💛 See Example! 👉 ([ddongule's portfolio](https://www.ddongule.com))
-
-## 🌿 Features
-
-- 🔥 One Page Layout
-- 🔥 Responsive Web
-- 🔥 Dark/Light Theme
-- 🔥 Language Support (Korean/English)
-
-## 🪜 How To Use
-
-### 1. Clone this repository
-
-```
-$ git clone https://github.com/hipheckts/ifeoluwaafuwape.com
-```
-
-### 2. Go into the repository
-
-```
-$ cd ddongule-simple-portfolio
-```
-
-### 3. Install Dependencies and Start Development Server
-
-- Using NPM
-
-  ```
-  $ npm install
-
-  $ npm start
-  ```
-
-- Using Yarn
-
-  ```
-    $ yarn
-
-    $ yarn start
-  ```
-
-### 4. 🌎 Start Developing! Let's Go!
-
-## 🚀 Quick Start
-
-> If you do not want to use any of the items below, feel free to delete it from `db.json`! It will work fine!
-
-- example)
-  You can choose sections that you want to use! Just delete it from `db.json`
-
-  - `src/db.json`
-
-    ```
-      {
-        "aboutMe": {
-          "name": "그루밍",
-          "nickName": "nickName!",
-          "profileImg": "../assets/images/me.gif",
-          "email": "mnk918p@gmail.com",
-          "githubUrl": "https://github.com/hipheckts",
-          "blogUrl": "https://mingule.tistory.com/",
-          "linkedInUrl": "https://www.linkedin.com/"
-        },
-
-        "timestamp": [
-          {
-            "title": "우아한 횽제들",
-            "when": "21.12 ~ ",
-            "organizer": "우아한 횽제들",
-            "tags": ["company"]
-          }
-        ]
-      }
-    ```
-
-### 🇰🇷🇺🇸 0. Select Default Language!
-
-Default Language : **English**
-
-**🔥 You can Select whether to use English or Korean**
-
-  <img src="./public/readme/images/language-select.png" alt="example-image"/>
-
-- Go to `/src/db.json`
-
-  #### 🇺🇸 [Default] Set Default Language as English
-
-  ```
-      "meta": {
-        ...
-        "defaultLanguage": "English"
-        ...
-      }
-  ```
-
-  #### 🇰🇷 Set Default: Korean
-
-  > If you want to use Korean as your default language, just copy and paste the code below the line.
-
-  ```
-      "meta": {
-        ...
-        "defaultLanguage": "Korean"
-        ...
-      }
-  ```
-
-### 👉 1. Main Title Section.
-
-  <img src="./public/readme/images/mainTitle.png" alt="example-image"/>
-
-- Go to `/src/db.json`
-
-  ```
-      "aboutMe": {
-        ...
-        "nickName": "type your own title!"
-        ...
-      }
-  ```
-
-### 👉 2. About Me Section.
-
-  <img src="./public/readme/images/AboutMe.png" alt="example-image"/>
-
-- Change Main Image
-
-1. Put your image to `/public/assets/images`
-
-   - `jpg`, `gif`, `png`
-
-2. Go to `/src/db.json`
-   ```
-     "aboutMe": {
-       ...
-       "profileImg": "../assets/images/yourImageFileName"
-       ...
-     }
-   ```
-
-- Change Introduction Text
-
-- 🇺🇸 Go to `/src/assets/static/markdown/aboutMySelf.english.md`
-
-  - (+) To use the Korean version, you should write `aboutMySelf.korean.md` too.
-
-  > **Write With Markdown! Then You'll See..**
-
-  <img src="./public/readme/images/example-markdown.png" alt="example-image"/>
-
-  > The Result will be like this!
-
-  <img src="./public/readme/images/example.png" alt="example-image"/>
-
-  1. h1, h2, h3
-
-     ```
-       # h1
-
-       ## h2
-
-       ### h3
-     ```
-
-  2. Bold text with Highlight
-
-     - yellow
-
-       ```
-         **Hi, my name is ddongule**
-       ```
-
-     - red
-       ```
-         +R+Hi, my name is ddongule+R+
-       ```
-     - blue
-
-       ```
-         +B+Hi, my name is ddongule+B+
-       ```
-
-     - green
-       ```
-         +G+Hi, my name is ddongule+G+
-       ```
-
-  3. Enter
-
-     ```
-       <br />
-     ```
-
-  4. Code
-
-     ```
-       `React.js`
-       `HTML/CSS(SASS)`
-       `Javascript`
-     ```
-
-  5. CheckList (Black & White)
-
-     ```
-       & Check List(Black & White)
-     ```
-
-  6. CheckList (HighLight)
-
-     ```
-       - Check List(Black & White)
-     ```
-
-  7. Ordered List
-
-     ```
-       1. Ordered List
-       2. Ordered List
-       3. Ordered List
-       4. Ordered List
-     ```
-
-  8. Link
-
-     ```
-       [TextToShow](https://www.your.link)
-     ```
-
-### 👉 3. Skill Sets Section.
-
-  <img src="./public/readme/images/SkillSets.png" alt="example-image"/>
-
-Write down your **Professional Skill Sets** here!
-
-> ✨ Customize your own SkillSets Section!
-
-- Go to `/src/db.json`
-
+# ⬛ ifeoluwaafuwape.xyz — Minimalist Developer Site & Publishing Platform
+
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite)](https://vitejs.dev)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react)](https://reactjs.org)
+[![License](https://img.shields.io/badge/License-MIT-black?style=flat-square)](./LICENSE)
+
+Official personal website, portfolio, and Markdown publishing platform of **Ifeoluwa Afuwape (Hipheckts)** — UK-qualified Engineering Manager & Certified Cloud Architect (GCP/AWS).
+
+Designed with a high-contrast, distraction-free **black & white monochromatic developer aesthetic** and built for sub-second page loads.
+
+---
+
+## ⚡ Core Features
+
+- **High-Performance Architecture**: Built with Vite + React 18 + React Router v6. Production bundle compiles in **~1.1s** with Rollup vendor code-splitting (<26 kB core JS).
+- **Monochromatic Aesthetic**: Clean dark mode (`#0a0a0a`) by default with dark/light mode toggle. Uses monospace (`JetBrains Mono`) for code, tags, timestamps, and terminal headers, paired with `Inter` for body copy.
+- **Dynamic Markdown Articles**: Publish technical articles simply by dropping `.md` files into `src/content/articles/`. Features YAML frontmatter parsing, syntax highlighting (`highlight.js`), tag filtering, and search.
+- **TechChat with Ife Podcast**: Interactive video podcast hub on `/podcast` streaming all 9 playlist episodes from YouTube ([`PLE1d6q-CHei7ryhzDE6vhtlhC0vAzqoCE`](https://www.youtube.com/playlist?list=PLE1d6q-CHei7ryhzDE6vhtlhC0vAzqoCE)) with dynamic episode selection.
+- **Conference Speaking**: Dedicated `/speaking` section showcasing keynotes, workshops, and panel sessions (TechNExt 2026, FlutterForward Extended Accra, GDG FUNAAB, CodeLagos).
+- **Fully Responsive Navigation**: Icon-based spacing for tablets and an expandable monochromatic menu drawer for mobile viewports (<640px).
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React 18](https://reactjs.org/) + [React Router v6](https://reactrouter.com/)
+- **Build Tool**: [Vite](https://vitejs.dev/) + Rollup Code-Splitting
+- **Styling**: Pure Vanilla CSS with CSS Custom Properties (Variables)
+- **Markdown & Syntax Highlighting**: `front-matter`, `react-markdown`, `remark-gfm`, `rehype-highlight`, `highlight.js`
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+---
+
+## 📂 Repository Structure
+
+```text
+ifeoluwaafuwape.com/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx        # Responsive header with icon nav & mobile drawer
+│   │   └── Footer.jsx        # Footer with copyright & social links
+│   ├── content/
+│   │   └── articles/         # Markdown (.md) articles repository
+│   ├── pages/
+│   │   ├── Home.jsx          # Profile hero, GCP certs, speaking & podcast highlights
+│   │   ├── Experience.jsx    # Work experience, capabilities, volunteering, education
+│   │   ├── Projects.jsx      # Open-source packages & enterprise solutions
+│   │   ├── Articles.jsx      # Article index with live search & tag filtering
+│   │   ├── ArticleDetail.jsx# Full markdown article reader view
+│   │   ├── Speaking.jsx      # Conference keynotes & panel sessions
+│   │   └── Podcast.jsx       # TechChat with Ife interactive video player & episodes
+│   ├── utils/
+│   │   └── markdownLoader.js # Dynamic Vite import.meta.glob & frontmatter parser
+│   ├── App.jsx               # Application routes
+│   ├── main.jsx              # Application entrypoint
+│   └── index.css             # Monochromatic design system
+├── index.html                # Root HTML template
+├── vite.config.js            # Vite configuration & Rollup chunking
+└── package.json
 ```
 
-    "skillSets": [
-      {
-        "category": "Front End Skills",
-        "skills": [
-          { "skill": "Javascript", "level": "5" },
-          ...
-        ]
-      },
-      ...
-    ]
+---
 
+## 📝 How to Publish a New Article
+
+To publish a new article on the site:
+
+1. Create a new `.md` file in `src/content/articles/` (e.g. `your-article-slug.md`).
+2. Add standard YAML frontmatter metadata at the top:
+
+```markdown
+---
+title: "Your Article Title Here"
+date: "2026-09-15"
+description: "A concise description of what this article covers."
+tags: ["Architecture", "Cloud", "React"]
+readTime: "5 min read"
+---
+
+Write your article content in Markdown here...
+
+```javascript
+const greeting = "Hello World";
+console.log(greeting);
+```
 ```
 
-### 👉 4. Projects Section.
+3. The site automatically detects, parses, and lists your new article on `/articles` and `/`!
 
-  <img src="./public/readme/images/Projects.png" alt="example-image"/>
+---
 
-Write down the **Projects** you have made!
+## 🚀 Local Development & Build Commands
 
-> ✨ Customize your own Projects Section!
+```bash
+# 1. Install dependencies
+npm install
 
-- Go to `/src/db.json`
+# 2. Run local development server (http://localhost:3000)
+npm run dev
 
+# 3. Build production bundle
+npm run build
+
+# 4. Preview production build locally
+npm run preview
 ```
 
-    "projects": [
-      {
-        "imgUrl": "/assets/images/exmaple.png",
-        "githubUrl": "https://github.com/hipheckts",
-        "projectUrl": "www.ddongule.com",
-        "title": "ddongule-simple-portfolio",
-        "term": "21.02.02 v1.3.0",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia ..",
-        "attribution": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia ..",
-        "tags": [] // Even if there are no tags to write, you should leave the empty array as is.
-      },
-      ...
-    ]
+---
 
-```
+## 📄 License
 
-### 👉 5. Timestamp Section.
-
-  <img src="./public/readme/images/Timestamp.png" alt="example-image"/>
-
-Write down your **Timestamps** you have made!
-
-> ✨ Customize your own Timestamp Section!
-
-- Go to `/src/db.json`
-
-```
-
-    "timestamp": [
-      {
-        "title": "Woowa Sisters",
-        "when": "21.12 ~ ",
-        "organizer": "Woowa Sisters",
-        "tags": ["company"] // Even if there are no tags to write, you should leave the empty array as is.
-      },
-      ...
-    ]
-
-```
-
-### 👉 6. Experiences Section.
-
-  <img src="./public/readme/images/Experiences.png" alt="example-image"/>
-
-Write down your **Experiences** that you have!
-
-> ✨ Customize your own Experiences Section!
-
-- Go to `/src/db.json`
-
-```
-
-    "experiences": [
-      {
-        "imgUrl": "/assets/images/exmaple.png",
-        "title": "[Software Engineer] Woowa Sisters Co.",
-        "term": "21.02 - 현재 진행 중",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia ..",
-        "experienceUrl": "https://woowacourse.github.io/"
-      },
-      ...
-    ]
-
-```
-
-### 👉 7. Education Section.
-
- <img src="./public/readme/images/Education.png" alt="example-image"/>
-
-Write down your **Educations**!
-
-> ✨ Customize your own Education Section!
-
-- Go to `/src/db.json`
-
-```
-
-    "educations": [
-      {
-        "title": "Woowa University",
-        "term": "2013.03 - 2017.03",
-        "description": "[Graduated] Computer Science and Engineering"
-      },
-      ...
-    ]
-
-```
-
-## 🐞 Bug Reporting
-
-- [Make Issue!](https://github.com/hipheckts/ifeoluwaafuwape.com/issues)
-
-## How to Contribute?
-
-1. **Fork** this repository
-2. **Create** your own branch: `git checkout -b new-feature`
-3. **Add** and **Commit**: `git commit -am 'feat: add new feature`
-4. **Push** to your branch: `git push origin new-feature`
-5. **Submit** a Pull Request!🌟
-
-## License
-
-- [`MIT License`]('./LICENSE')
+This project is open-source under the [MIT License](./LICENSE).
