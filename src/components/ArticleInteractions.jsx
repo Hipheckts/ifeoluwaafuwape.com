@@ -42,12 +42,14 @@ export default function ArticleInteractions({ slug }) {
 
   const handlePostComment = (e, parentId = null) => {
     e.preventDefault();
-    const nameToUse = parentId ? authorName : authorName;
+    const nameToUse = (authorName || '').trim() || 'Anonymous';
     const textToUse = parentId ? replyText : commentText;
 
-    if (!nameToUse.trim() || !textToUse.trim()) return;
+    if (!textToUse.trim()) return;
 
-    localStorage.setItem('ifeoluwa_commenter_name', nameToUse.trim());
+    if (authorName.trim()) {
+      localStorage.setItem('ifeoluwa_commenter_name', authorName.trim());
+    }
 
     const updated = addComment(slug, {
       author: nameToUse,
@@ -145,11 +147,10 @@ export default function ArticleInteractions({ slug }) {
           <div className="comment-form-inputs">
             <input
               type="text"
-              placeholder="Your name or handle..."
+              placeholder="Your name (optional)..."
               value={authorName}
               onChange={(e) => setAuthorName(e.target.value)}
               className="comment-input-name"
-              required
             />
             <textarea
               placeholder="Share your thoughts, feedback, or questions..."
@@ -225,11 +226,10 @@ export default function ArticleInteractions({ slug }) {
                   >
                     <input
                       type="text"
-                      placeholder="Your name..."
+                      placeholder="Your name (optional)..."
                       value={authorName}
                       onChange={(e) => setAuthorName(e.target.value)}
                       className="comment-input-name"
-                      required
                     />
                     <textarea
                       placeholder={`Replying to ${comment.author}...`}

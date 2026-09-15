@@ -102,7 +102,7 @@ export default function ArticleDetail() {
         </div>
 
         {/* Claps, Emoji Reactions & Comments */}
-        <ArticleInteractions slug={slug} />
+        {!article.disableInteractions && <ArticleInteractions slug={slug} />}
       </article>
     </div>
   );

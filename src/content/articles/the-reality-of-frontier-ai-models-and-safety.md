@@ -4,6 +4,7 @@ date: "2026-09-15"
 description: "An unfiltered look into RSI vs AGI, Google's breakthrough, OpenAI's GPT-6 Astra, data privacy, and why leaders from Dario Amodei to Barack Obama are calling to pace the frontier."
 tags: ["AI", "AI Safety", "Frontier Models", "AGI", "Ethics"]
 readTime: "7 min read"
+disableInteractions: false
 ---
 
 I am usually not one who gets overly excited by marketing hype, but what is happening behind closed doors right now in frontier AI is something every developer and engineering leader needs to pay attention to 😄.
