@@ -23,9 +23,9 @@ export default function Home() {
           alt="Ifeoluwa Afuwape speaking on stage at TechNExt Festival"
           className="home-banner-img"
         />
-        <div className="home-banner-caption">
+        {/* <div className="home-banner-caption">
           <span>🎤 Keynote Speaker & Panelist @ TechNExt Festival</span>
-        </div>
+        </div> */}
       </div>
 
       {/* Hero Section */}
