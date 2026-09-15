@@ -1,30 +1,31 @@
 import initialData from '../data/article-interactions.json';
 
-const STORAGE_KEY = 'ifeoluwa_article_interactions_v2';
+const STORAGE_KEY = 'ifeoluwa_article_interactions_v4';
 
-/**
- * Helper to retrieve full interaction state from localStorage or JSON seed
- */
-function getAllInteractions() {
+// Clear legacy cached storage keys from early development
+try {
+  localStorage.removeItem('ifeoluwa_article_interactions_v1');
+  localStorage.removeItem('ifeoluwa_article_interactions_v2');
+  localStorage.removeItem('ifeoluwa_article_interactions_v3');
+} catch (e) {}
+
+function getSavedUserInteractions() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       return JSON.parse(saved);
     }
   } catch (e) {
-    console.error('Failed to read interactions from storage:', e);
+    console.error('Failed to read user interactions:', e);
   }
-  return initialData;
+  return {};
 }
 
-/**
- * Save updated interaction state to localStorage
- */
-function saveAllInteractions(data) {
+function saveUserInteractions(allSaved) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(allSaved));
   } catch (e) {
-    console.error('Failed to save interactions to storage:', e);
+    console.error('Failed to save user interactions:', e);
   }
 }
 
@@ -32,13 +33,7 @@ function saveAllInteractions(data) {
  * Get interaction state for a specific article slug
  */
 export function getArticleInteractions(slug) {
-  const all = getAllInteractions();
-  if (all[slug]) {
-    return all[slug];
-  }
-
-  // Create default state for new or unspecified articles
-  const defaultTemplate = all['default'] || {
+  const base = initialData[slug] || initialData['default'] || {
     claps: 0,
     userClaps: 0,
     reactions: { clap: 0, heart: 0, mindblown: 0, insightful: 0, fire: 0 },
@@ -46,70 +41,78 @@ export function getArticleInteractions(slug) {
     comments: []
   };
 
-  return JSON.parse(JSON.stringify(defaultTemplate));
+  const result = JSON.parse(JSON.stringify(base));
+  const userStore = getSavedUserInteractions()[slug];
+
+  if (userStore) {
+    result.userClaps = userStore.userClaps || 0;
+    result.claps = (base.claps || 0) + (userStore.userClaps || 0);
+
+    if (userStore.userReactions) {
+      result.userReactions = userStore.userReactions;
+      Object.keys(userStore.userReactions).forEach((k) => {
+        if (userStore.userReactions[k]) {
+          result.reactions[k] = (base.reactions?.[k] || 0) + 1;
+        }
+      });
+    }
+
+    if (userStore.userComments && userStore.userComments.length > 0) {
+      result.comments = [...userStore.userComments, ...(result.comments || [])];
+    }
+  }
+
+  return result;
 }
 
 /**
  * Add a clap to an article (max 50 claps per user session)
  */
 export function addClap(slug) {
-  const all = getAllInteractions();
-  if (!all[slug]) {
-    all[slug] = getArticleInteractions(slug);
+  const allSaved = getSavedUserInteractions();
+  if (!allSaved[slug]) {
+    allSaved[slug] = { userClaps: 0, userReactions: {}, userComments: [] };
   }
 
-  const articleState = all[slug];
-  if (!articleState.userClaps) articleState.userClaps = 0;
-
-  if (articleState.userClaps < 50) {
-    articleState.claps = (articleState.claps || 0) + 1;
-    articleState.userClaps += 1;
-    saveAllInteractions(all);
+  if (allSaved[slug].userClaps < 50) {
+    allSaved[slug].userClaps = (allSaved[slug].userClaps || 0) + 1;
+    saveUserInteractions(allSaved);
   }
 
-  return all[slug];
+  return getArticleInteractions(slug);
 }
 
 /**
  * Toggle a reaction emoji (clap, heart, mindblown, insightful, fire)
  */
 export function toggleReaction(slug, reactionKey) {
-  const all = getAllInteractions();
-  if (!all[slug]) {
-    all[slug] = getArticleInteractions(slug);
+  const allSaved = getSavedUserInteractions();
+  if (!allSaved[slug]) {
+    allSaved[slug] = { userClaps: 0, userReactions: {}, userComments: [] };
+  }
+  if (!allSaved[slug].userReactions) {
+    allSaved[slug].userReactions = {};
   }
 
-  const articleState = all[slug];
-  if (!articleState.userReactions) articleState.userReactions = {};
-  if (!articleState.reactions) articleState.reactions = {};
+  const current = allSaved[slug].userReactions[reactionKey];
+  allSaved[slug].userReactions[reactionKey] = !current;
 
-  const isAlreadyReacted = articleState.userReactions[reactionKey];
-
-  if (isAlreadyReacted) {
-    articleState.userReactions[reactionKey] = false;
-    articleState.reactions[reactionKey] = Math.max(0, (articleState.reactions[reactionKey] || 1) - 1);
-  } else {
-    articleState.userReactions[reactionKey] = true;
-    articleState.reactions[reactionKey] = (articleState.reactions[reactionKey] || 0) + 1;
-  }
-
-  saveAllInteractions(all);
-  return all[slug];
+  saveUserInteractions(allSaved);
+  return getArticleInteractions(slug);
 }
 
 /**
  * Add a new comment or reply to an article
  */
 export function addComment(slug, { author, content, parentId = null }) {
-  const all = getAllInteractions();
-  if (!all[slug]) {
-    all[slug] = getArticleInteractions(slug);
+  const allSaved = getSavedUserInteractions();
+  if (!allSaved[slug]) {
+    allSaved[slug] = { userClaps: 0, userReactions: {}, userComments: [] };
+  }
+  if (!allSaved[slug].userComments) {
+    allSaved[slug].userComments = [];
   }
 
-  const articleState = all[slug];
-  if (!articleState.comments) articleState.comments = [];
-
-  // Generate simple initials avatar
   const nameParts = author.trim().split(' ');
   const avatar = nameParts.length >= 2
     ? (nameParts[0][0] + nameParts[1][0]).toUpperCase()
@@ -117,8 +120,8 @@ export function addComment(slug, { author, content, parentId = null }) {
 
   const newComment = {
     id: 'c_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
-    author: author.trim() || 'Anonymous Reader',
-    avatar: avatar || 'AR',
+    author: author.trim() || 'Anonymous',
+    avatar: avatar || 'AN',
     badge: author.toLowerCase().includes('ifeoluwa') ? 'Author' : 'Reader',
     date: new Date().toISOString(),
     content: content.trim(),
@@ -128,7 +131,6 @@ export function addComment(slug, { author, content, parentId = null }) {
   };
 
   if (parentId) {
-    // Nested reply
     const findAndReply = (commentsList) => {
       for (let c of commentsList) {
         if (c.id === parentId) {
@@ -142,27 +144,24 @@ export function addComment(slug, { author, content, parentId = null }) {
       }
       return false;
     };
-    findAndReply(articleState.comments);
+    findAndReply(allSaved[slug].userComments);
   } else {
-    // Top-level comment
-    articleState.comments.unshift(newComment);
+    allSaved[slug].userComments.unshift(newComment);
   }
 
-  saveAllInteractions(all);
-  return all[slug];
+  saveUserInteractions(allSaved);
+  return getArticleInteractions(slug);
 }
 
 /**
  * Like or unlike a specific comment
  */
 export function toggleLikeComment(slug, commentId) {
-  const all = getAllInteractions();
-  if (!all[slug]) {
-    all[slug] = getArticleInteractions(slug);
+  const allSaved = getSavedUserInteractions();
+  if (!allSaved[slug] || !allSaved[slug].userComments) {
+    return getArticleInteractions(slug);
   }
 
-  const articleState = all[slug];
-  
   const toggleInList = (list) => {
     for (let c of list) {
       if (c.id === commentId) {
@@ -182,7 +181,8 @@ export function toggleLikeComment(slug, commentId) {
     return false;
   };
 
-  toggleInList(articleState.comments || []);
-  saveAllInteractions(all);
-  return all[slug];
+  toggleInList(allSaved[slug].userComments);
+  saveUserInteractions(allSaved);
+  return getArticleInteractions(slug);
 }
+
