@@ -70,7 +70,7 @@ body {
 
 /* Base Container */
 .container {
-  max-width: 760px;
+  max-width: 920px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -222,6 +222,57 @@ a:hover {
 
 .mobile-nav-link.active {
   border-left: 3px solid var(--accent);
+}
+
+/* ==========================================
+   Hero Banner Header Image
+   ========================================== */
+
+.home-banner-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1024 / 256;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  background: var(--bg-tertiary);
+}
+
+.home-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.home-banner-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+@media (max-width: 640px) {
+  .home-banner-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .home-banner-caption {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    bottom: 8px;
+    left: 8px;
+  }
 }
 
 /* Tablet Responsive Spacing (768px - 950px) */
@@ -660,7 +711,8 @@ a:hover {
 
 .article-image-figure.img-align-center {
   margin: 2.25rem auto;
-  max-width: 640px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .article-image-figure.img-align-left {
