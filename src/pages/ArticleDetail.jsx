@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Image as ImageIcon } from 'lucide-react';
 import { getArticleBySlug } from '../utils/markdownLoader';
 
 import 'highlight.js/styles/github-dark.css';
@@ -60,7 +60,41 @@ export default function ArticleDetail() {
         </header>
 
         <div className="markdown-body">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeHighlight]}
+            components={{
+              img: ({ node, src, alt, ...props }) => {
+                const altText = alt || '';
+                const isLeft = altText.toLowerCase().includes('left');
+                const isRight = altText.toLowerCase().includes('right');
+                
+                // Clean up positioning flags from visible caption
+                const captionText = altText
+                  .replace(/\|?\s*\b(left|right|full|center)\b/gi, '')
+                  .trim();
+
+                let figureClass = 'article-image-figure';
+                if (isLeft) figureClass += ' img-align-left';
+                else if (isRight) figureClass += ' img-align-right';
+                else figureClass += ' img-align-center';
+
+                return (
+                  <figure className={figureClass}>
+                    <div className="article-image-wrapper">
+                      <img src={src} alt={captionText || 'Article image'} loading="lazy" {...props} />
+                    </div>
+                    {captionText && (
+                      <figcaption className="article-image-caption">
+                        <ImageIcon size={12} style={{ display: 'inline', marginRight: '4px', verticalAlign: '-1px' }} />
+                        {captionText}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
+            }}
+          >
             {article.body}
           </ReactMarkdown>
         </div>
@@ -68,3 +102,4 @@ export default function ArticleDetail() {
     </div>
   );
 }
+
