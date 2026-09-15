@@ -16,7 +16,7 @@ const REACTION_CONFIG = [
   { key: 'fire', emoji: '🔥', label: 'Fire' }
 ];
 
-export default function ArticleInteractions({ slug }) {
+export default function ArticleInteractions({ slug, hideComments = false, hideReactions = false }) {
   const [data, setData] = useState(() => getArticleInteractions(slug));
   const [authorName, setAuthorName] = useState(() => localStorage.getItem('ifeoluwa_commenter_name') || '');
   const [commentText, setCommentText] = useState('');
@@ -93,48 +93,53 @@ export default function ArticleInteractions({ slug }) {
     return count;
   };
 
+  if (hideComments && hideReactions) return null;
+
   return (
     <section className="article-interactions-section">
       <div className="interactions-divider" />
 
       {/* Claps & Reactions Header Bar */}
-      <div className="reactions-container">
-        <div className="clap-widget">
-          <button
-            onClick={handleClap}
-            className={`clap-btn ${clapBurst ? 'clap-pulse' : ''}`}
-            title="Click to clap for this article (up to 50 times)"
-          >
-            <span className="clap-emoji">👏</span>
-            <span className="clap-count">{data.claps || 0}</span>
-            {clapBurst && <span className="clap-burst-float">+1</span>}
-          </button>
-          <span className="clap-user-limit">
-            {data.userClaps > 0 ? `You clapped ${data.userClaps}x` : 'Give a clap'}
-          </span>
-        </div>
+      {!hideReactions && (
+        <div className="reactions-container">
+          <div className="clap-widget">
+            <button
+              onClick={handleClap}
+              className={`clap-btn ${clapBurst ? 'clap-pulse' : ''}`}
+              title="Click to clap for this article (up to 50 times)"
+            >
+              <span className="clap-emoji">👏</span>
+              <span className="clap-count">{data.claps || 0}</span>
+              {clapBurst && <span className="clap-burst-float">+1</span>}
+            </button>
+            <span className="clap-user-limit">
+              {data.userClaps > 0 ? `You clapped ${data.userClaps}x` : 'Give a clap'}
+            </span>
+          </div>
 
-        <div className="reactions-picker">
-          {REACTION_CONFIG.map(({ key, emoji, label }) => {
-            const count = data.reactions?.[key] || 0;
-            const isUserReacted = data.userReactions?.[key];
-            return (
-              <button
-                key={key}
-                onClick={() => handleToggleReaction(key)}
-                className={`reaction-pill ${isUserReacted ? 'active' : ''}`}
-                title={`React with ${label}`}
-              >
-                <span className="reaction-emoji">{emoji}</span>
-                {count > 0 && <span className="reaction-count">{count}</span>}
-              </button>
-            );
-          })}
+          <div className="reactions-picker">
+            {REACTION_CONFIG.map(({ key, emoji, label }) => {
+              const count = data.reactions?.[key] || 0;
+              const isUserReacted = data.userReactions?.[key];
+              return (
+                <button
+                  key={key}
+                  onClick={() => handleToggleReaction(key)}
+                  className={`reaction-pill ${isUserReacted ? 'active' : ''}`}
+                  title={`React with ${label}`}
+                >
+                  <span className="reaction-emoji">{emoji}</span>
+                  {count > 0 && <span className="reaction-count">{count}</span>}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Comments Area */}
-      <div className="comments-container">
+      {!hideComments && (
+        <div className="comments-container">
         <div className="comments-header">
           <h3 className="comments-title">
             <MessageSquare size={18} />
@@ -290,6 +295,7 @@ export default function ArticleInteractions({ slug }) {
           )}
         </div>
       </div>
+      )}
     </section>
   );
 }
