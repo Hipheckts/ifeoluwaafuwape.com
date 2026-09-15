@@ -40,7 +40,7 @@ export default function ArticleDetail() {
         <header className="article-header">
           <div className="article-meta" style={{ marginBottom: '1rem' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-              <Calendar size={14} /> {article.date}
+              <Calendar size={14} /> {article.formattedDate || article.date}
             </span>
             <span>•</span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>

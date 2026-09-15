@@ -104,7 +104,7 @@ export default function Articles() {
             filteredArticles.map((article) => (
               <Link key={article.slug} to={`/articles/${article.slug}`} className="article-card">
                 <div className="article-meta">
-                  <span>{article.date}</span>
+                  <span>{article.formattedDate || article.date}</span>
                   <span>•</span>
                   <span>{article.readTime}</span>
                 </div>
