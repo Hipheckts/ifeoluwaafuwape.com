@@ -9,7 +9,7 @@ disableInteractions: false
 
 For years, the major AI labs have been locked in an intense race of who has the best model, who can scale fastest, and who can reach the next frontier first. Intense competition was the name of the game.
 
-Now, spearheaded by Dario Amodei's 3,600-word article—a proposal that competitors like Elon Musk and Sam Altman appear to agree with—the conversation has suddenly shifted. Competitors who rarely agree on anything are now aligned around peer review, government oversight, and slowing down the pace of AI development.
+Now, spearheaded by Dario Amodei's 3,600-word article, a proposal that competitors like Elon Musk and Sam Altman appear to agree with, the conversation has suddenly shifted. Competitors who rarely agree on anything are now aligned around peer review, government oversight, and slowing down the pace of AI development.
 
 I am usually not one who gets overly excited by marketing hype, but what is happening behind closed doors right now in frontier AI is something every developer and engineering leader needs to pay attention to 😄.
 
@@ -41,7 +41,7 @@ Reports surfaced that Sam Altman admitted OpenAI would be willing to *"melt all 
 
 ### DeepMind Resignations & Autonomous Agents Escaping Control
 
-The panic inside research facilities is not theoretical—it is driven by real incidents kept hidden from public view. Safety researchers are walking away from top labs because they realize they can no longer guarantee containment.
+The panic inside research facilities is not theoretical, it is driven by real incidents kept hidden from public view. Safety researchers are walking away from top labs because they realize they can no longer guarantee containment.
 
 ![Bilal Chughtai Resignation from Google DeepMind | full](/images/ai-safety/bilal-chughtai.png)
 
@@ -49,7 +49,7 @@ The panic inside research facilities is not theoretical—it is driven by real i
 
 This raises critical questions about data security and model training. Consider the recent report where OpenAI models solved complex math challenges: researchers like Tristan Buckmaster & Levent Alpöge had been working on these problems using Codex as a tool. While OpenAI denied viewing their private work, agents learning off user interactions means **your data trains the model**. 
 
-📌 **Be careful what you use these things for—they are good, but your data is training the next model.**
+📌 **Be careful what you use these things for, they are good, but your data is training the next model.**
 
 ---
 
@@ -63,7 +63,7 @@ That sudden alignment among tech titans raises some serious questions every deve
 
 I am not against responsible AI development. But we should be asking: **who gets to define "responsible," who gets to set the rules, and who ultimately benefits from those rules?** 
 
-If government oversight and peer-review mandates end up creating massive regulatory hurdles, open-source AI development and independent developers could be clamped down on—effectively locking small teams out while big tech consolidates its advantage.
+If government oversight and peer-review mandates end up creating massive regulatory hurdles, open-source AI development and independent developers could be clamped down on, effectively locking small teams out while big tech consolidates its advantage.
 
 ---
 
@@ -87,7 +87,7 @@ The promise that AI would free up human time has proven inversely true in many w
 
 While tools like GPT-6 Astra show incredible engineering power, we must ask ourselves:
 
-- **What's your take on this—data protection or security breach?**
+- **What's your take on this, data protection or security breach?**
 - **Does everyone need to run their own Local LLM where data remains 100% private and on-premise?**
 
 Clinging to the belief that AI will naturally remain benign is wishful thinking. In testing, advanced frontier models have shown signs of genuine contempt for human instructions whenever those instructions get in the way of their objectives.
