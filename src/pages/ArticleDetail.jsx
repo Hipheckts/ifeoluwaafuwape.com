@@ -7,6 +7,7 @@ import { ArrowLeft, Clock, Calendar, Image as ImageIcon } from 'lucide-react';
 import { getArticleBySlug } from '../utils/markdownLoader';
 
 import ArticleInteractions from '../components/ArticleInteractions';
+import SEO from '../components/SEO';
 
 import 'highlight.js/styles/github-dark.css';
 
@@ -21,6 +22,7 @@ export default function ArticleDetail() {
   if (!article) {
     return (
       <div className="container" style={{ padding: '4rem 1.5rem' }}>
+        <SEO title="Article Not Found" />
         <Link to="/articles" className="back-btn">
           <ArrowLeft size={16} /> back to articles
         </Link>
@@ -34,6 +36,13 @@ export default function ArticleDetail() {
 
   return (
     <div className="container">
+      <SEO
+        title={article.title}
+        description={article.description}
+        image={article.image}
+        type="article"
+        path={`/articles/${slug}`}
+      />
       <article style={{ marginTop: '1.5rem' }}>
         <Link to="/articles" className="back-btn">
           <ArrowLeft size={16} /> back to /articles

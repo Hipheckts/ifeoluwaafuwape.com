@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import { Github, Linkedin, Youtube, Mail, ShieldCheck, Radio, Mic, ExternalLink } from 'lucide-react';
 import { getAllArticles } from '../utils/markdownLoader';
 
+import SEO from '../components/SEO';
+
 export default function Home() {
   const articles = getAllArticles().slice(0, 3);
 
   return (
     <div className="container">
+      <SEO
+        title="Ifeoluwa Afuwape — Engineering Manager & Certified Cloud Architect"
+        description="UK-qualified engineering manager and technology leader with about 10 years of experience specializing in high-scale systems, GCP/AWS Cloud Architecture, and AI."
+        image="/images/default-og-image.jpg"
+        path="/"
+      />
       {/* Hero Section */}
       <section className="profile-header">
         <div className="developer-tag">whoami</div>

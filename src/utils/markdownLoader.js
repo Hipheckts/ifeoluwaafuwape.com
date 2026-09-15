@@ -43,6 +43,18 @@ export function getAllArticles() {
     const slug = path.split('/').pop().replace(/\.md$/, '');
     const rawDate = parsed.attributes.date || '';
 
+    // Extract cover/meta image (frontmatter image OR first inline markdown image)
+    let articleImage = parsed.attributes.image || '';
+    if (!articleImage) {
+      const match = parsed.body.match(/!\[.*?\]\((.*?)\)/);
+      if (match && match[1]) {
+        articleImage = match[1].split('|')[0].trim();
+      }
+    }
+    if (!articleImage) {
+      articleImage = '/images/default-og-image.jpg';
+    }
+
     articles.push({
       slug,
       title: parsed.attributes.title || slug,
@@ -51,6 +63,7 @@ export function getAllArticles() {
       description: parsed.attributes.description || '',
       tags: parsed.attributes.tags || [],
       readTime: parsed.attributes.readTime || '3 min read',
+      image: articleImage,
       body: parsed.body,
     });
   }

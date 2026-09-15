@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Tag, ArrowUpDown } from 'lucide-react';
 import { getAllArticles } from '../utils/markdownLoader';
+import SEO from '../components/SEO';
 
 export default function Articles() {
   const articles = getAllArticles();
@@ -42,6 +43,12 @@ export default function Articles() {
 
   return (
     <div className="container">
+      <SEO
+        title="Technical Articles & Writings"
+        description="Engineering insights, cloud architecture tutorials, AI safety analysis, and software development practices by Ifeoluwa Afuwape."
+        image="/images/default-og-image.jpg"
+        path="/articles"
+      />
       <section className="section" style={{ marginTop: '0' }}>
         <div className="section-header">
           <h2 className="section-title">articles_&_writing</h2>
