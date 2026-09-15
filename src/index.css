@@ -652,10 +652,15 @@ a:hover {
   font-size: 0.875rem;
 }
 
+.main-content {
+  flex: 1;
+  padding-bottom: 4.5rem;
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--border-color);
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   margin-top: auto;
 }
 
@@ -669,3 +674,4 @@ a:hover {
   font-size: 0.8rem;
   color: var(--text-secondary);
 }
+

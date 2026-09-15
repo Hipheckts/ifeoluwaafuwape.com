@@ -163,7 +163,7 @@ export default function Articles() {
         </div>
 
         {/* Topic Tags Filter at Footer of Articles Listing */}
-        <div style={{ marginTop: '3.5rem', paddingTop: '1.5rem', borderTop: '1px dashed var(--border-color)' }}>
+        <div style={{ marginTop: '3.5rem', paddingTop: '1.5rem', marginBottom: '2rem', borderTop: '1px dashed var(--border-color)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.85rem' }}>
             <Tag size={15} style={{ color: 'var(--accent)' }} />
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
