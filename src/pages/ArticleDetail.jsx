@@ -6,6 +6,8 @@ import rehypeHighlight from 'rehype-highlight';
 import { ArrowLeft, Clock, Calendar, Image as ImageIcon } from 'lucide-react';
 import { getArticleBySlug } from '../utils/markdownLoader';
 
+import ArticleInteractions from '../components/ArticleInteractions';
+
 import 'highlight.js/styles/github-dark.css';
 
 export default function ArticleDetail() {
@@ -98,6 +100,9 @@ export default function ArticleDetail() {
             {article.body}
           </ReactMarkdown>
         </div>
+
+        {/* Claps, Emoji Reactions & Comments */}
+        <ArticleInteractions slug={slug} />
       </article>
     </div>
   );

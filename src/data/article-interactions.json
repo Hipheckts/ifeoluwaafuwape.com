@@ -1,0 +1,74 @@
+{
+  "the-reality-of-frontier-ai-models-and-safety": {
+    "claps": 42,
+    "userClaps": 0,
+    "reactions": {
+      "clap": 28,
+      "heart": 14,
+      "mindblown": 19,
+      "insightful": 31,
+      "fire": 22
+    },
+    "userReactions": {},
+    "comments": [
+      {
+        "id": "c1",
+        "author": "Dr. Alex Vance",
+        "avatar": "AV",
+        "badge": "Researcher",
+        "date": "2026-09-15T09:30:00Z",
+        "content": "The point about Recursive Self-Improvement (RSI) vs public AGI narrative is spot on. When a model can optimize its own weights and training loop, speed becomes non-linear.",
+        "likes": 8,
+        "liked": false,
+        "replies": [
+          {
+            "id": "r1",
+            "author": "Ifeoluwa Afuwape",
+            "avatar": "IA",
+            "badge": "Author",
+            "date": "2026-09-15T09:45:00Z",
+            "content": "Exactly! The public discussion is focused on sci-fi scenarios, but RSI is already operational inside closed labs. That's why leaders are taking safety commitments seriously.",
+            "likes": 5,
+            "liked": false
+          }
+        ]
+      },
+      {
+        "id": "c2",
+        "author": "Sarah Jenkins",
+        "avatar": "SJ",
+        "badge": "Dev Lead",
+        "date": "2026-09-15T10:05:00Z",
+        "content": "The guitar CAD modeling test in Astra you mentioned sounds insane 🤯. Really appreciate this unbiased breakdown of the safety vs velocity debate.",
+        "likes": 4,
+        "liked": false,
+        "replies": []
+      }
+    ]
+  },
+  "default": {
+    "claps": 18,
+    "userClaps": 0,
+    "reactions": {
+      "clap": 12,
+      "heart": 8,
+      "mindblown": 5,
+      "insightful": 15,
+      "fire": 9
+    },
+    "userReactions": {},
+    "comments": [
+      {
+        "id": "c_def_1",
+        "author": "Tech Reader",
+        "avatar": "TR",
+        "badge": "Reader",
+        "date": "2026-09-14T14:20:00Z",
+        "content": "Great write-up! Appreciate the clear explanations and real-world examples.",
+        "likes": 3,
+        "liked": false,
+        "replies": []
+      }
+    ]
+  }
+}
